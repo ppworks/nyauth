@@ -1,5 +1,5 @@
 module Nyauth
-  class NewPasswordRequestsController < ApplicationController
+  class NewPasswordRequestsController < Nyauth::BaseController
     allow_everyone
     respond_to :html, :json
     before_action :set_user, only: [:create]
