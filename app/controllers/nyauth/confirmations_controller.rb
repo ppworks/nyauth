@@ -1,19 +1,21 @@
 module Nyauth
-  class ConfirmationsController < Nyauth::BaseController
+  class ConfirmationsController < ApplicationController
+    include Nyauth::ApplicationConcern
+    include Nyauth::ClientConcern
     allow_everyone
     self.responder = ConfirmationResponder
     respond_to :html, :json
-    before_action :set_user
+    before_action :set_client
 
     def update
-      @user.confirm
-      respond_with(@user, location: root_path)
+      @client.confirm
+      respond_with(@client, location: root_path)
     end
 
     private
 
-    def set_user
-      @user = User.find_by!(confirmation_key: params[:confirmation_key])
+    def set_client
+      @client = client_class.find_by!(confirmation_key: params[:confirmation_key])
     end
   end
 end

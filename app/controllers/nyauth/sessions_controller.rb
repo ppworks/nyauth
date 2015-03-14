@@ -1,5 +1,7 @@
 module Nyauth
-  class SessionsController < Nyauth::BaseController
+  class SessionsController < ApplicationController
+    include Nyauth::ApplicationConcern
+    include Nyauth::ClientConcern
     allow_everyone only: [:new, :create]
     respond_to :html, :json
     before_action :set_session_service

@@ -1,25 +1,27 @@
 module Nyauth
-  class PasswordsController < Nyauth::BaseController
+  class PasswordsController < ApplicationController
+    include Nyauth::ApplicationConcern
+    include Nyauth::ClientConcern
     respond_to :html, :json
-    before_action :set_user
+    before_action :set_client
 
     def edit
     end
 
     def update
-      @user.attributes = user_params
-      @user.save(context: :update_password)
-      respond_with(@user, location: root_path)
+      @client.attributes = client_params
+      @client.save(context: :update_password)
+      respond_with(@client, location: root_path)
     end
 
     private
 
-    def set_user
-      @user = User.find(current_authenticated.id)
+    def set_client
+      @client = client_class.find(current_authenticated.id)
     end
 
-    def user_params
-      params.fetch(:user, {})
+    def client_params
+      params.fetch(client_param_name, {})
             .permit(:password, :password_confirmation)
     end
   end
