@@ -1,5 +1,5 @@
 module Nyauth
-  class PasswordsController < ApplicationController
+  class PasswordsController < Nyauth::BaseController
     respond_to :html, :json
     before_action :set_user
 

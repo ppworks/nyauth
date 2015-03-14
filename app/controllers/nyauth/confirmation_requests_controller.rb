@@ -1,5 +1,5 @@
 module Nyauth
-  class ConfirmationRequestsController < ApplicationController
+  class ConfirmationRequestsController < Nyauth::BaseController
     allow_everyone
     respond_to :html, :json
     before_action :set_user, only: [:create]
