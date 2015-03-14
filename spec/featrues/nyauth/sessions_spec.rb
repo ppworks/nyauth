@@ -28,7 +28,7 @@ RSpec.describe 'Nyauth::Sessions' do
     end
 
     scenario 'sign out user' do
-      visit nyauth.root_path
+      visit root_path
       click_link('Sign out')
       expect(page).to have_content('sign out')
     end
