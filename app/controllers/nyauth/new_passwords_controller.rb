@@ -1,25 +1,27 @@
 module Nyauth
-  class NewPasswordsController < Nyauth::BaseController
+  class NewPasswordsController < ApplicationController
+    include Nyauth::ApplicationConcern
+    include Nyauth::ClientConcern
     allow_everyone
     respond_to :html, :json
-    before_action :set_user
+    before_action :set_client
 
     def edit
     end
 
     def update
-      @user.update_new_password(user_params)
-      respond_with(@user, location: nyauth.new_session_path)
+      @client.update_new_password(client_params)
+      respond_with(@client, location: nyauth.new_session_path)
     end
 
     private
 
-    def set_user
-      @user = User.find_by!(new_password_key: params[:new_password_key])
+    def set_client
+      @client = client_class.find_by!(new_password_key: params[:new_password_key])
     end
 
-    def user_params
-      params.fetch(:user, {})
+    def client_params
+      params.fetch(client_param_name, {})
             .permit(:password, :password_confirmation)
     end
   end

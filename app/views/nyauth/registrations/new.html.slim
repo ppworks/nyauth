@@ -1,10 +1,10 @@
-= form_for @user, url: registration_path, html: { class: 'pure-form pure-form-stacked' } do |f|
+= form_for @client, url: registration_path, html: { class: 'pure-form pure-form-stacked' } do |f|
   fieldset
     legend= t 'nav.registrations.new'
-    - if @user.errors.present?
+    - if @client.errors.present?
       h2 errors
       ul.errors
-        - @user.errors.full_messages.each do |e|
+        - @client.errors.full_messages.each do |e|
           li #{e}
     = f.text_field :email, placeholder: :email
     = f.password_field :password, placeholder: :password

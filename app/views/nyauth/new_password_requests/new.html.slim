@@ -1,4 +1,4 @@
-= form_for(User.new, url: new_password_requests_path, mehotd: :post, html: { class: 'pure-form' }) do |f|
+= form_for(client_class.new, url: new_password_requests_path, mehotd: :post, html: { class: 'pure-form' }) do |f|
   fieldset
     legend= t 'nav.new_password_requests.new'
   = f.text_field(:email, placeholder: :email)

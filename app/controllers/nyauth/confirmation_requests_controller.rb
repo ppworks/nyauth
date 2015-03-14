@@ -1,28 +1,30 @@
 module Nyauth
-  class ConfirmationRequestsController < Nyauth::BaseController
+  class ConfirmationRequestsController < ApplicationController
+    include Nyauth::ApplicationConcern
+    include Nyauth::ClientConcern
     allow_everyone
     respond_to :html, :json
-    before_action :set_user, only: [:create]
-    after_action :send_mail, only: [:create], if: -> { @user.confirmation_key.present? }
+    before_action :set_client, only: [:create]
+    after_action :send_mail, only: [:create], if: -> { @client.confirmation_key.present? }
 
     def new
     end
 
     def create
-      @user.request_confirmation
-      respond_with(@user, location: root_path)
+      @client.request_confirmation
+      respond_with(@client, location: root_path)
     end
 
     private
 
-    def set_user
-      @user = User.find_by!(email: params[:user][:email])
+    def set_client
+      @client = client_class.find_by!(email: params[client_param_name][:email])
     rescue ActiveRecord::RecordNotFound
       render :new
     end
 
     def send_mail
-      Nyauth::UserMailer.request_confirmation(@user).deliver_now
+      Nyauth::RequestMailer.request_confirmation(@client).deliver_now
     end
   end
 end
