@@ -15,9 +15,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency 'rails', '~> 4.2.0'
-  s.add_dependency 'responders', '~>2.0'
-  s.add_dependency 'slim'
-  s.add_dependency 'email_validator'
-
-  s.add_development_dependency 'sqlite3'
+  s.add_dependency 'responders', '~> 2.0'
+  s.add_dependency 'slim-rails', '~> 3.0'
+  s.add_dependency 'sprockets-rails', '~> 2.2'
+  s.add_dependency 'email_validator', '~> 1.5'
 end

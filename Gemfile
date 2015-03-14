@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'faker'
