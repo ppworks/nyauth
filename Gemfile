@@ -19,4 +19,5 @@ group :development, :test do
   gem 'database_rewinder'
   gem 'timecop'
   gem 'rack_session_access'
+  gem 'email_spec'
 end

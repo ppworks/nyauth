@@ -69,6 +69,9 @@ GEM
     database_rewinder (0.5.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     email_validator (1.5.0)
       activemodel
     erubis (2.7.0)
@@ -213,6 +216,7 @@ DEPENDENCIES
   capybara
   capybara-email
   database_rewinder
+  email_spec
   factory_girl_rails
   faker
   launchy

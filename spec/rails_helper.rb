@@ -22,6 +22,8 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include ControllerMacros, type: :controller
   config.include FeatureMacros, type: :feature
+  config.include EmailSpec::Helpers, type: :mailer
+  config.include EmailSpec::Matchers, type: :mailer
 
   config.before(:suite) do
     DatabaseRewinder.clean
