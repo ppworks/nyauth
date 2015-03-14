@@ -7,5 +7,13 @@ module Nyauth
         super
       end
     end
+
+    def root_path
+      if main_app.respond_to?(:root_path)
+        main_app.__send__(:root_path)
+      else
+        '/'
+      end
+    end
   end
 end
