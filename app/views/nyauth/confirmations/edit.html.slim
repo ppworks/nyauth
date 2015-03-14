@@ -1,0 +1,5 @@
+- if @user.errors.present?
+  h2 errors
+  ul.errors
+    - @user.errors.full_messages.each do |e|
+      li #{e}

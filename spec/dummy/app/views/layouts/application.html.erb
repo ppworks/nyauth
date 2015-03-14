@@ -9,6 +9,12 @@
 <body>
 
 <%= yield %>
-
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<% if flash[:notice] %>
+  <%= flash[:alert] %>
+<% end %>
+<%= link_to 'Sign out', session_path, class: 'pure-menu-link', method: :delete %>
 </body>
 </html>

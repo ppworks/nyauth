@@ -1,0 +1,15 @@
+= form_for @session_service, url: session_path, html: { class: 'pure-form' } do |f|
+  fieldset
+    legend= t 'nav.sessions.new'
+    - if @session_service.errors.present?
+      h2 errors
+      ul.errors
+        - @session_service.errors.full_messages.each do |e|
+          li #{e}
+    = f.email_field :email, placeholder: :email
+    = f.password_field :password, placeholder: :password
+    = f.submit 'Sign in', data: { disable_with: '...' }, class: 'pure-button pure-button-primary'
+
+ul
+  li= link_to 'sign up', new_registration_path
+  li= link_to 'request new password', new_new_password_request_path

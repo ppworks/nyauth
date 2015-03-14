@@ -17,4 +17,5 @@ group :development, :test do
   gem 'poltergeist'
   gem 'database_rewinder'
   gem 'timecop'
+  gem 'rack_session_access'
 end

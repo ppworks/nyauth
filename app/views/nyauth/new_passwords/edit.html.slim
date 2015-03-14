@@ -1,0 +1,11 @@
+= form_for(@user, url: new_password_path(params[:new_password_key]), html: { class: 'pure-form pure-form-stacked' }) do |f|
+  fieldset
+    legend
+    - if @user.errors.present?
+      h2 errors
+      ul.errors
+        - @user.errors.full_messages.each do |e|
+          li #{e}
+    = f.password_field :password, placeholder: :password
+    = f.password_field :password_confirmation, placeholder: :confirmation
+    = f.submit 'Update', data: { disable_with: '...' }, class: 'pure-button pure-button-primary'

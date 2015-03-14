@@ -4,6 +4,11 @@ module Nyauth
 
     included do
       before_validation :check_new_password_key, on: :new_password
+      validates :email, email: { strict_mode: false }
+      validates :password, presence: true,
+                           length: { minimum: 8 },
+                           on: [:create, :update_password, :new_password]
+      validates :password, confirmation: true
     end
 
     def update_new_password(params)

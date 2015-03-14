@@ -1,0 +1,46 @@
+en:
+  nav:
+    sessions:
+      new: 'Sign in'
+      destroy: 'Sign out'
+    registrations:
+      new: 'Sign up'
+    profiles:
+      edit: 'Edit Profiles'
+    confirmation_requests:
+      new: 'Re send confirmation request'
+    new_password_requests:
+      new: 'New password request'
+    profiles:
+      edit: 'Profiles'
+  flash:
+    nyauth:
+      profiles:
+        update:
+          notice: 'updated profiles'
+      passwords:
+        update:
+          notice: 'updated password'
+      registrations:
+        create:
+          notice: 'registration success'
+      sessions:
+        create:
+          notice: 'sign in success'
+        destroy:
+          notice: 'sign out success'
+      confirmations:
+        update:
+          notice: 'confirmed'
+      confirmation_requests:
+        create:
+          notice: 'sent mail'
+      new_password_requests:
+        create:
+          notice: 'sent mail'
+      new_passwords:
+        update:
+          notice: 'updated password'
+      group_requests:
+        create:
+          notice: 'sent request'

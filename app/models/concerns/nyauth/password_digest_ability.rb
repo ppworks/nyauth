@@ -4,7 +4,7 @@ module Nyauth
     DIGEST_STRETCHES = 1000
 
     included do
-      attr_accessor :password
+      attr_accessor :password, :password_confirmation
       validates :password_digest, presence: true
       before_validation do
         set_password_salt if password.present?

@@ -1,0 +1,5 @@
+= form_for(User.new, url: confirmation_requests_path, mehotd: :post, html: { class: 'pure-form' }) do |f|
+  fieldset
+    legend= t 'nav.confirmation_requests.new'
+  = f.text_field(:email, placeholder: :email)
+  = f.submit 'request confirmation', data: { disable_with: '...' }, class: 'pure-button pure-button-primary'
