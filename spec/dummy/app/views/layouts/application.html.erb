@@ -15,6 +15,7 @@
 <% if flash[:notice] %>
   <%= flash[:alert] %>
 <% end %>
+<%= link_to "URL helper on application", posts_path %>
 <%= link_to 'Sign out', nyauth.session_path, class: 'pure-menu-link', method: :delete %>
 </body>
 </html>
