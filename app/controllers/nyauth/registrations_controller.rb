@@ -17,7 +17,7 @@ module Nyauth
     private
 
     def set_client
-      @client = User.new(client_params)
+      @client = client_class.new(client_params)
     end
 
     def client_params
