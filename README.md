@@ -5,7 +5,6 @@
 ```ruby
 class ApplicationController < ActionController::Base
   include Nyauth::SessionConcern
-  self.responder = Nyauth::AppResponder
 end
 ```
 
@@ -54,7 +53,7 @@ end
 rake routes
 ```
 
-```
+```ruby
 Prefix Verb URI Pattern Controller#Action
 nyauth      /nyauth     Nyauth::Engine
 
