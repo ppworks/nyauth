@@ -1,13 +1,17 @@
 # Nyauth
 
-```application_controller
+### application_controller.rb
+
+```ruby
 class ApplicationController < ActionController::Base
   include Nyauth::SessionConcern
   self.responder = Nyauth::AppResponder
 end
 ```
 
-```schema
+### migration
+
+```ruby
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
@@ -28,7 +32,9 @@ class CreateUsers < ActiveRecord::Migration
 end
 ```
 
-```model
+### model
+
+```ruby
 class User < ActiveRecord::Base
   include Nyauth::Authenticatable
   include Nyauth::Confirmable
@@ -36,7 +42,9 @@ class User < ActiveRecord::Base
 end
 ```
 
-```routes
+### config/routes.rb
+
+```ruby
 Rails.application.routes.draw do
   mount Nyauth::Engine => "/"
 end
