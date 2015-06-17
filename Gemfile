@@ -19,3 +19,7 @@ group :development, :test do
   gem 'rack_session_access'
   gem 'email_spec'
 end
+
+group :test do
+  gem 'generator_spec'
+end

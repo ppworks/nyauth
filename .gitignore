@@ -117,3 +117,4 @@ spec/dummy/db/*.sqlite3
 spec/dummy/public/system
 spec/dummy/coverage/
 spec/dummy/spec/tmp
+spec/lib/generators/nyauth/tmp/config/initializers/nyauth.rb
