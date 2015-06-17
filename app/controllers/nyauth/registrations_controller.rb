@@ -11,7 +11,7 @@ module Nyauth
 
     def create
       sign_in(@client) if @client.save
-      respond_with(@client, location: root_path)
+      respond_with(@client, location: Nyauth.redirect_path_after_registration || main_app.root_path)
     end
 
     private
