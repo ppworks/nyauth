@@ -29,8 +29,7 @@ RSpec.describe 'Nyauth::Registrations' do
     let(:admin) { build(:admin) }
 
     feature 'register' do
-      # FIXIME: use URL helper
-      background { visit '/admin/registration/new' }
+      background { visit new_admin_registration_path }
 
       scenario 'create admin' do
         fill_in('admin_email', with: admin.email)

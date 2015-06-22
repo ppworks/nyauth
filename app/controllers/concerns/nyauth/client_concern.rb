@@ -13,7 +13,7 @@ module Nyauth
     private
 
     def mounted_path
-      request.script_name.presence || request.path.split('/').try(:second)
+      request.script_name.presence || "/#{request.path.split('/').try(:second)}"
     end
 
     # specify client class from mounted_path

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  mount Nyauth::Engine, at: '/admin', as: :nyauth_admin # FIXME: separate URL helper
+  namespace :nyauth, path: :admin, as: :admin do
+    resource :session, only: %i(new create destory)
+    resource :registration, only: %i(new create)
+  end
   mount Nyauth::Engine, at: '/', as: :nyauth
 
   resources :posts, only: %i(index)

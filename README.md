@@ -45,6 +45,12 @@ end
 
 ```ruby
 Rails.application.routes.draw do
+  # for admin
+  namespace :nyauth, path: :admin, as: :admin do
+    resource :session, only: %i(new create destory)
+  end
+
+  # for user
   mount Nyauth::Engine => "/"
 end
 ```
