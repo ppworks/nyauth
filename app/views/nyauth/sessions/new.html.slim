@@ -1,4 +1,4 @@
-= form_for @session_service, url: request.path.sub(/new/, ''), html: { class: 'pure-form' } do |f|
+= form_for @session_service, url: session_path_for(client_name), html: { class: 'pure-form' } do |f|
   fieldset
     legend= t 'nav.sessions.new'
     - if @session_service.errors.present?

@@ -3,6 +3,7 @@ module Nyauth
     extend ActiveSupport::Concern
     included do |base|
       helper_method :client_class
+      helper_method :client_name
     end
 
     def initialize
