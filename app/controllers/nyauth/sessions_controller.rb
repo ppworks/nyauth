@@ -10,7 +10,7 @@ module Nyauth
     end
 
     def create
-      sign_in(@session_service.client) if @session_service.save(as: client_param_name)
+      sign_in(@session_service.client) if @session_service.save(as: client_name)
       respond_with @session_service, location: Nyauth.configuration.redirect_path_after_sign_in || main_app.root_path
     end
 

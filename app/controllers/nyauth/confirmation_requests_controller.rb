@@ -18,7 +18,7 @@ module Nyauth
     private
 
     def set_client
-      @client = client_class.find_by!(email: params[client_param_name][:email])
+      @client = client_class.find_by!(email: params[client_name][:email])
     rescue ActiveRecord::RecordNotFound
       render :new
     end

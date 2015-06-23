@@ -21,7 +21,7 @@ module Nyauth
     end
 
     def client_params
-      params.fetch(client_param_name, {})
+      params.fetch(client_name, {})
             .permit(:email, :password, :password_confirmation)
     end
   end

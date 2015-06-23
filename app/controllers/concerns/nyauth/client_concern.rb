@@ -23,7 +23,7 @@ module Nyauth
       @client_classes[mounted_path] = User
     end
 
-    def client_param_name
+    def client_name
       client_class.name.underscore.to_sym
     end
   end
