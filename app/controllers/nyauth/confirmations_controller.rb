@@ -9,7 +9,7 @@ module Nyauth
 
     def update
       @client.confirm
-      respond_with(@client, location: root_path)
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_update_confirmation || main_app.root_path)
     end
 
     private
