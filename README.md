@@ -82,3 +82,8 @@ new_new_password_request GET    /new_password_requests/new(.:format)            
                          PUT    /new_passwords/:new_password_key(.:format)      nyauth/new_passwords#update
                     root GET    /                                               nyauth/sessions#new
 ```
+
+```
+new_session_path_for(:user) # /session/new
+new_session_path_for(:admin) # /admin/session/new
+```
