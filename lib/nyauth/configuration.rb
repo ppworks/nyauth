@@ -8,7 +8,9 @@ module Nyauth
                   :redirect_path_after_update_confirmation,
                   :redirect_path_after_new_password_request,
                   :redirect_path_after_update_new_password,
-                  :redirect_path_after_update_password
+                  :redirect_path_after_update_password,
+                  :password_minium,
+                  :password_digest_stretches
 
 
     def initialize
@@ -20,6 +22,8 @@ module Nyauth
       @redirect_path_after_new_password_request = nil
       @redirect_path_after_update_new_password = nil
       @redirect_path_after_update_password = nil
+      @password_minium = 8
+      @password_digest_stretches = 1000
       @redirect_path_block = Proc.new {}
     end
 

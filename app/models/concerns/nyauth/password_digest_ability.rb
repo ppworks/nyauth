@@ -1,7 +1,6 @@
 module Nyauth
   module PasswordDigestAbility
     extend ActiveSupport::Concern
-    DIGEST_STRETCHES = 1000
 
     included do
       attr_accessor :password, :password_confirmation
@@ -19,7 +18,7 @@ module Nyauth
     private
 
     def generate_password_digest(password)
-      DIGEST_STRETCHES.times do
+      Nyauth.configuration.password_digest_stretches.times do
         password = Digest::SHA256.hexdigest("#{password}#{password_salt}")
       end
       password
