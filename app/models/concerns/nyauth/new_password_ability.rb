@@ -6,7 +6,7 @@ module Nyauth
       before_validation :check_new_password_key, on: :new_password
       validates :email, email: { strict_mode: false }
       validates :password, presence: true,
-                           length: { minimum: 8 },
+                           length: { minimum: Nyauth.configuration.password_minium },
                            on: [:create, :update_password, :new_password]
       validates :password, confirmation: true
     end
