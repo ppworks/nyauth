@@ -6,8 +6,8 @@ module Nyauth
                   :redirect_path_after_registration,
                   :redirect_path_after_create_request_confirmation,
                   :redirect_path_after_update_confirmation,
-                  :redirect_path_after_new_password_request,
-                  :redirect_path_after_update_new_password,
+                  :redirect_path_after_reset_password_request,
+                  :redirect_path_after_reset_password,
                   :redirect_path_after_update_password,
                   :password_minium,
                   :password_digest_stretches
@@ -19,8 +19,8 @@ module Nyauth
       @redirect_path_after_registration = nil
       @redirect_path_after_create_request_confirmation = nil
       @redirect_path_after_update_confirmation = nil
-      @redirect_path_after_new_password_request = nil
-      @redirect_path_after_update_new_password = nil
+      @redirect_path_after_reset_password_request = nil
+      @redirect_path_after_reset_password = nil
       @redirect_path_after_update_password = nil
       @password_minium = 8
       @password_digest_stretches = 1000

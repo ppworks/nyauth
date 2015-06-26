@@ -9,7 +9,7 @@ en:
       edit: 'Edit Profiles'
     confirmation_requests:
       new: 'Re send confirmation request'
-    new_password_requests:
+    reset_password_requests:
       new: 'New password request'
     profiles:
       edit: 'Profiles'
@@ -35,10 +35,10 @@ en:
       confirmation_requests:
         create:
           notice: 'sent mail'
-      new_password_requests:
+      reset_password_requests:
         create:
           notice: 'sent mail'
-      new_passwords:
+      reset_passwords:
         update:
           notice: 'updated password'
       group_requests:

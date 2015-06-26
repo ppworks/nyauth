@@ -7,7 +7,7 @@ module Nyauth
       mail to: client.email
     end
 
-    def request_new_password(client)
+    def request_reset_password(client)
       @client = client
       mail to: client.email
     end

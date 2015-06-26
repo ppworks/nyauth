@@ -100,8 +100,8 @@ RSpec.describe Nyauth::ApplicationHelper do
     end
   end
 
-  describe '#new_password_requests_path_for' do
-    subject { helper.new_password_requests_path_for(client_name) }
+  describe '#reset_password_requests_path_for' do
+    subject { helper.reset_password_requests_path_for(client_name) }
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
@@ -110,12 +110,12 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is user' do
       let(:client_name) { :user }
-      it { is_expected.to eq "/new_password_requests" }
+      it { is_expected.to eq "/reset_password_requests" }
     end
   end
 
-  describe '#new_new_password_request_path_for' do
-    subject { helper.new_new_password_request_path_for(client_name) }
+  describe '#new_reset_password_request_path_for' do
+    subject { helper.new_reset_password_request_path_for(client_name) }
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
@@ -124,13 +124,13 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is user' do
       let(:client_name) { :user }
-      it { is_expected.to eq "/new_password_requests/new" }
+      it { is_expected.to eq "/reset_password_requests/new" }
     end
   end
 
-  describe '#new_password_path_for(:new_password_key)' do
-    subject { helper.new_password_path_for(client_name, new_password_key) }
-    let(:new_password_key) { 'hogehoge' }
+  describe '#reset_password_path_for(:reset_password_key)' do
+    subject { helper.reset_password_path_for(client_name, reset_password_key) }
+    let(:reset_password_key) { 'hogehoge' }
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
@@ -139,7 +139,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is user' do
       let(:client_name) { :user }
-      it { is_expected.to eq "/new_passwords/#{new_password_key}" }
+      it { is_expected.to eq "/reset_passwords/#{reset_password_key}" }
     end
   end
 end

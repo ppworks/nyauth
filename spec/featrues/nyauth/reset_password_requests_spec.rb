@@ -4,20 +4,20 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
   let!(:user) { create(:user) }
 
   feature 'confirmation' do
-    let(:new_password) { 'cool_password' }
+    let(:reset_password) { 'cool_password' }
     background do
-      visit nyauth.new_new_password_request_path
+      visit nyauth.new_reset_password_request_path
     end
 
-    scenario 'request & set new password' do
+    scenario 'request & set reset password' do
       fill_in('user_email', with: user.email)
-      click_button('request new password')
+      click_button('reset password')
 
       open_email(user.email)
       current_email.click_link('set new password')
 
-      fill_in('user_password', with: new_password)
-      fill_in('user_password_confirmation', with: new_password)
+      fill_in('user_password', with: reset_password)
+      fill_in('user_password_confirmation', with: reset_password)
       click_button('Update')
 
       expect(page).to have_content('updated')
@@ -26,14 +26,14 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
 
     scenario 'request expired' do
       fill_in('user_email', with: user.email)
-      click_button('request new password')
+      click_button('reset password')
 
       Timecop.freeze(Time.current + 3.hours) do
         open_email(user.email)
         current_email.click_link('set new password')
 
-        fill_in('user_password', with: new_password)
-        fill_in('user_password_confirmation', with: new_password)
+        fill_in('user_password', with: reset_password)
+        fill_in('user_password_confirmation', with: reset_password)
         click_button('Update')
 
         expect(page).to have_content('expired')

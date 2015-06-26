@@ -24,17 +24,17 @@ ActiveRecord::Schema.define(version: 20150317141956) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                       null: false
-    t.string   "password_digest",             null: false
-    t.string   "password_salt",               null: false
+    t.string   "email",                         null: false
+    t.string   "password_digest",               null: false
+    t.string   "password_salt",                 null: false
     t.string   "nickname"
     t.datetime "confirmed_at"
     t.string   "confirmation_key"
     t.datetime "confirmation_key_expired_at"
-    t.string   "new_password_key"
-    t.datetime "new_password_key_expired_at"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "reset_password_key"
+    t.datetime "reset_password_key_expired_at"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

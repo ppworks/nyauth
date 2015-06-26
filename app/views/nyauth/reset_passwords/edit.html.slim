@@ -1,4 +1,4 @@
-= form_for(@client, url: new_password_path_for(client_name, params[:new_password_key]), html: { class: 'pure-form pure-form-stacked' }) do |f|
+= form_for(@client, url: reset_password_path_for(client_name, params[:reset_password_key]), html: { class: 'pure-form pure-form-stacked' }) do |f|
   fieldset
     legend
     - if @client.errors.present?
