@@ -19,7 +19,7 @@ RSpec.describe 'Nyauth::Registrations' do
     scenario "can't create user" do
       click_button('Sign up')
 
-      expect(page).to have_content('errors')
+      expect(page).to have_content("can't")
     end
   end
 end

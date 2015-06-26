@@ -1,0 +1,7 @@
+<%= form_for @client, url: registration_path_for(client_name) do |f| %>
+  <%= f.object.errors.full_messages.join ',' %>
+  <%= f.email_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'Sign up' %>
+<% end %>
