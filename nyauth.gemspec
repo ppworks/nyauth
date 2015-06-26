@@ -18,5 +18,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'responders', '~> 2.0'
   s.add_dependency 'slim-rails', '~> 3.0'
   s.add_dependency 'sprockets-rails', '~> 2.2'
-  s.add_dependency 'email_validator', '~> 1.5'
 end

@@ -4,7 +4,6 @@ module Nyauth
 
     included do
       before_validation :check_reset_password_key, on: :reset_password
-      validates :email, email: { strict_mode: false }
       validates :password, presence: true,
                            length: { minimum: Nyauth.configuration.password_minium },
                            on: [:create, :update_password, :reset_password]
