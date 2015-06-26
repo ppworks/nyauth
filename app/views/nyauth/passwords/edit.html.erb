@@ -1,0 +1,6 @@
+<%= form_for @client, url: password_path_for(client_name) do |f| %>
+  <%= f.object.errors.full_messages %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'Update' %>
+<% end %>

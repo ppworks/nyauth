@@ -21,7 +21,7 @@ RSpec.describe 'Nyauth::Passwords' do
     scenario "can't udpate password" do
       click_button('Update')
 
-      expect(page).to have_content('errors')
+      expect(page).to have_content("can't")
     end
   end
 end

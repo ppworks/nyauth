@@ -1,0 +1,4 @@
+<%= form_for client_class.new, url: reset_password_requests_path_for(client_name) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.submit 'reset password' %>
+<% end %>

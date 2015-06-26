@@ -18,6 +18,7 @@ group :development, :test do
   gem 'timecop'
   gem 'rack_session_access'
   gem 'email_spec'
+  gem 'jquery-rails'
 end
 
 group :test do
