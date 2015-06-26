@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nyauth (0.0.3)
+    nyauth (0.1.0)
       email_validator (~> 1.5)
       rails (~> 4.2.0)
       responders (~> 2.0)
