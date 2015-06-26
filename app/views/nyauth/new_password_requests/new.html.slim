@@ -1,5 +1,0 @@
-= form_for(client_class.new, url: new_password_requests_path_for(client_name), mehotd: :post, html: { class: 'pure-form' }) do |f|
-  fieldset
-    legend= t 'nav.new_password_requests.new'
-  = f.text_field(:email, placeholder: :email)
-  = f.submit 'request new password', data: { disable_with: '...' }, class: 'pure-button pure-button-primary'

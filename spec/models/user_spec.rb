@@ -5,5 +5,5 @@ RSpec.describe User do
   it { expect(user).to be_persisted }
   it_behaves_like 'Nyauth::Authenticatable', User
   it_behaves_like 'Nyauth::Confirmable', User
-  it_behaves_like 'Nyauth::NewPasswordAvility', User
+  it_behaves_like 'Nyauth::ResetPasswordAvility', User
 end

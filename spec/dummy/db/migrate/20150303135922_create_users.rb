@@ -8,8 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :confirmed_at
       t.string :confirmation_key
       t.datetime :confirmation_key_expired_at
-      t.string :new_password_key
-      t.datetime :new_password_key_expired_at
+      t.string :reset_password_key
+      t.datetime :reset_password_key_expired_at
 
       t.timestamps null: false
     end
