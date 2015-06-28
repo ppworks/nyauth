@@ -1,5 +1,7 @@
 # Nyauth
 
+Simple & modualbe authentication gem
+
 ### application_controller.rb
 
 ```ruby
