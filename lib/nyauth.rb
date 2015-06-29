@@ -1,6 +1,7 @@
 require 'nyauth/engine'
 require 'nyauth/encryptor'
 require 'nyauth/configuration'
+require 'nyauth/rails'
 
 module Nyauth
   class << self
