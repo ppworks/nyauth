@@ -88,3 +88,13 @@ new_reset_password_request GET    /reset_password_requests/new(.:format)        
 new_session_path_for(:user) # /session/new
 new_session_path_for(:admin) # /admin/session/new
 ```
+
+### Generator
+
+```
+rails g nyauth:install
+```
+
+```
+rails g nyauth:views
+```
