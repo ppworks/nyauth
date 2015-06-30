@@ -16,5 +16,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 4.2.0'
   s.add_dependency 'responders', '~> 2.0'
-  s.add_dependency 'sprockets-rails', '~> 2.2'
 end

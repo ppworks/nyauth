@@ -4,7 +4,6 @@ PATH
     nyauth (0.1.0)
       rails (~> 4.2.0)
       responders (~> 2.0)
-      sprockets-rails (~> 2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -161,9 +160,9 @@ GEM
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     slop (3.6.0)
-    sprockets (3.0.1)
+    sprockets (3.2.0)
       rack (~> 1.0)
-    sprockets-rails (2.2.4)
+    sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
@@ -202,3 +201,6 @@ DEPENDENCIES
   shoulda-matchers
   sqlite3
   timecop
+
+BUNDLED WITH
+   1.10.5
