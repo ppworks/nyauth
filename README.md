@@ -49,7 +49,7 @@ end
 Rails.application.routes.draw do
   # for admin
   namespace :nyauth, path: :admin, as: :admin do
-    resource :session, only: %i(new create destory)
+    concerns :nyauth_sessionable
   end
 
   # for user
