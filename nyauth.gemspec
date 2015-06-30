@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.email       = ['koshikawa@ppworks.jp']
   s.homepage    = 'https://github.com/ppworks/nyauth'
   s.summary     = 'Simple authentication'
-  s.description = 'Simple & modualbe authentication gem'
+  s.description = 'Simple and modualbe authentication gem'
   s.license     = 'MIT'
 
   s.files = Dir["{app,config,db,lib}/**/*", 'MIT-LICENSE', 'Rakefile', 'README.md']
