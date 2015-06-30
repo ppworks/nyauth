@@ -47,7 +47,6 @@ end
 
 ```ruby
 Rails.application.routes.draw do
-  nyauth_concerns
   # for admin
   namespace :nyauth, path: :admin, as: :admin do
     concerns :nyauth_sessionable
