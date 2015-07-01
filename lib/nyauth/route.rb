@@ -4,10 +4,8 @@ module Nyauth
       concern :nyauth_registrable do
         resource :registration, only: %i(new create)
       end
-      concern :nyauth_sessionable do
+      concern :nyauth_authenticatable do
         resource :session, only: %i(new create destroy)
-      end
-      concern :nyauth_passwordable do
         resource :password, only: %i(edit update)
         resources :reset_password_requests, only: %i(new create)
         resources :reset_passwords, param: :reset_password_key, only: %i(edit update)

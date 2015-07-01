@@ -62,7 +62,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to eq "/admin/password" }
     end
 
     context 'when client_name is user' do
@@ -105,7 +105,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to eq "/admin/reset_password_requests" }
     end
 
     context 'when client_name is user' do
@@ -119,7 +119,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to eq "/admin/reset_password_requests/new" }
     end
 
     context 'when client_name is user' do
@@ -134,7 +134,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when client_name is admin' do
       let(:client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to eq "/admin/reset_passwords/#{reset_password_key}" }
     end
 
     context 'when client_name is user' do

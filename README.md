@@ -16,15 +16,17 @@ end
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.string :nickname
+      # Authenticatable
       t.string :email, null: false
       t.string :password_digest, null: false
       t.string :password_salt, null: false
-      t.string :nickname
+      t.string :reset_password_key
+      t.datetime :reset_password_key_expired_at
+      # Confirmable
       t.datetime :confirmed_at
       t.string :confirmation_key
       t.datetime :confirmation_key_expired_at
-      t.string :reset_password_key
-      t.datetime :reset_password_key_expired_at
 
       t.timestamps null: false
     end
@@ -39,7 +41,6 @@ end
 class User < ActiveRecord::Base
   include Nyauth::Authenticatable
   include Nyauth::Confirmable
-  include Nyauth::ResetPasswordAbility
 end
 ```
 
@@ -49,7 +50,9 @@ end
 Rails.application.routes.draw do
   # for admin
   namespace :nyauth, path: :admin, as: :admin do
-    concerns :nyauth_sessionable
+    # concerns :nyauth_registrable
+    concerns :nyauth_authenticatable
+    # concerns :nyauth_confirmable
   end
 
   # for user
