@@ -2,6 +2,8 @@ module Nyauth
   module Authenticatable
     extend ActiveSupport::Concern
     include Nyauth::PasswordDigestAbility
+    include Nyauth::ResetPasswordAbility
+
 
     included do
       validates :email, presence: true
