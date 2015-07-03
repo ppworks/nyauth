@@ -11,7 +11,7 @@ module Nyauth
     def update
       @client.attributes = client_params
       @client.save(context: :update_password)
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_update_password || main_app.root_path)
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_update_password.call(client_name) || main_app.root_path)
     end
 
     private

@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] ||= 'test'
+ENV["NYAUTH_ENCRYPTION_SECRET"] = '1d5deeac604397c58c8ecdfecf1116e1c019a7355f612e67d8d40ac8fbf36b13de1e78dfffeecdf720aa953ab66d23718e21aee4cac5aa7939f34b89d5e6236b'
 require 'spec_helper'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
