@@ -17,7 +17,7 @@ module Nyauth
 
     def request_confirmation
       self.confirmation_key = SecureRandom.hex(32)
-      self.confirmation_key_expired_at = Time.current + 1.hour
+      self.confirmation_key_expired_at = Time.current + Nyauth.configuration.confirmation_expire_limit
       save
     end
 

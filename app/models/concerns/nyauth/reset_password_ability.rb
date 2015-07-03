@@ -17,7 +17,7 @@ module Nyauth
 
     def request_reset_password
       self.reset_password_key = SecureRandom.hex(32)
-      self.reset_password_key_expired_at = Time.current + 1.hour
+      self.reset_password_key_expired_at = Time.current + Nyauth.configuration.reset_password_expire_limit
       save
     end
 

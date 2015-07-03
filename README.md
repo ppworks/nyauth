@@ -130,6 +130,8 @@ Or edit `config/initializers/nyauth.rb`
 ```
 nyauth.configure do |config|
   config.encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET'] || ENV['SECRET_KEY_BASE']
+  config.confirmation_expire_limit = 1.hour
+  config.reset_password_expire_limit = 1.hour
   config.redirect_path do |urls|
     # config.redirect_path_after_sign_in = -> (client_name) {
     #  if client_name == :admin
