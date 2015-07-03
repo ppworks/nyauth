@@ -14,7 +14,8 @@ module Nyauth
     def detect_url_helper(feature, client_name, *args)
       @__methods ||= Nyauth::Engine.routes.url_helpers.instance_methods + Rails.application.routes.url_helpers.instance_methods
       @__candidates ||= @__methods.reject{|m| m =~ /\A(:?rails_|_)/}.map(&:to_s)
-      if client_name.to_sym == :user
+      if respond_to?(:nyauth) && client_name.to_sym == :user
+        # mounted as nyauth
         detect_url_helper_for_nyauth(feature, *args)
       else
         detect_url_helper_for_app(feature, client_name, *args)
