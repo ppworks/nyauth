@@ -44,6 +44,13 @@ class User < ActiveRecord::Base
 end
 ```
 
+```ruby
+class Admin < ActiveRecord::Base
+  include Nyauth::Authenticatable
+  #include Nyauth::Confirmable
+end
+```
+
 ### config/routes.rb
 
 ```ruby
@@ -96,6 +103,12 @@ new_session_path_for(:admin) # /admin/session/new
 
 ```
 rails g nyauth:install
+```
+
+```
+rails g nyauth <MODEL>
+rails g nyauth User
+rails g nyauth Admin
 ```
 
 ```
