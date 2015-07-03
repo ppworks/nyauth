@@ -1,0 +1,26 @@
+ja:
+  flash:
+    nyauth:
+      passwords:
+        update:
+          notice: 'パスワードを更新しました'
+      registrations:
+        create:
+          notice: '登録完了しました'
+      sessions:
+        create:
+          notice: 'ログインしました'
+        destroy:
+          notice: 'ログアウトしました'
+      confirmations:
+        update:
+          notice: 'メールアドレスの確認をしました'
+      confirmation_requests:
+        create:
+          notice: 'メールアドレスへ確認メールを送信しました'
+      reset_password_requests:
+        create:
+          notice: 'メールアドレスへパスワードリセットの案内を送信しました'
+      reset_passwords:
+        update:
+          notice: 'パスワードを再設定しました'
