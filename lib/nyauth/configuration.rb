@@ -9,6 +9,8 @@ module Nyauth
                   :redirect_path_after_reset_password_request,
                   :redirect_path_after_reset_password,
                   :redirect_path_after_update_password,
+                  :confirmation_expire_limit,
+                  :reset_password_expire_limit,
                   :password_minium,
                   :password_digest_stretches,
                   :encryption_secret
@@ -23,6 +25,8 @@ module Nyauth
       @redirect_path_after_reset_password_request = Proc.new {}
       @redirect_path_after_reset_password = Proc.new {}
       @redirect_path_after_update_password = Proc.new {}
+      @confirmation_expire_limit = 1.hour
+      @reset_password_expire_limit = 1.hour
       @password_minium = 8
       @password_digest_stretches = 1000
       @encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET']
