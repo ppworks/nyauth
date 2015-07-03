@@ -12,7 +12,7 @@ module Nyauth
 
     def create
       @client.request_reset_password
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_reset_password_request || main_app.root_path)
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_reset_password_request.call(client_name) || main_app.root_path)
     end
 
     private

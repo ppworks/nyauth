@@ -12,7 +12,7 @@ module Nyauth
 
     def create
       @client.request_confirmation
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_create_request_confirmation || main_app.root_path)
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_create_request_confirmation.call(client_name) || main_app.root_path)
     end
 
     private

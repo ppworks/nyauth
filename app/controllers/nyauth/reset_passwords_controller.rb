@@ -11,7 +11,7 @@ module Nyauth
 
     def update
       @client.reset_password(client_params)
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_reset_password || new_session_path_for(client_name))
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_reset_password.call(client_name) || new_session_path_for(client_name))
     end
 
     private

@@ -10,20 +10,22 @@ module Nyauth
                   :redirect_path_after_reset_password,
                   :redirect_path_after_update_password,
                   :password_minium,
-                  :password_digest_stretches
+                  :password_digest_stretches,
+                  :encryption_secret
 
 
     def initialize
-      @redirect_path_after_sign_in = nil
-      @redirect_path_after_sign_out = nil
-      @redirect_path_after_registration = nil
-      @redirect_path_after_create_request_confirmation = nil
-      @redirect_path_after_update_confirmation = nil
-      @redirect_path_after_reset_password_request = nil
-      @redirect_path_after_reset_password = nil
-      @redirect_path_after_update_password = nil
+      @redirect_path_after_sign_in = Proc.new {}
+      @redirect_path_after_sign_out = Proc.new {}
+      @redirect_path_after_registration = Proc.new {}
+      @redirect_path_after_create_request_confirmation = Proc.new {}
+      @redirect_path_after_update_confirmation = Proc.new {}
+      @redirect_path_after_reset_password_request = Proc.new {}
+      @redirect_path_after_reset_password = Proc.new {}
+      @redirect_path_after_update_password = Proc.new {}
       @password_minium = 8
       @password_digest_stretches = 1000
+      @encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET']
       @redirect_path_block = Proc.new {}
     end
 
