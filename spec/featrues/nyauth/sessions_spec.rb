@@ -17,7 +17,7 @@ RSpec.describe 'Nyauth::Sessions' do
       scenario "can't sign in user" do
         click_button('Sign in')
 
-        expect(page).to have_content('invalid')
+        expect(page).to have_content('Invalid')
       end
 
     end
@@ -51,7 +51,7 @@ RSpec.describe 'Nyauth::Sessions' do
       scenario "can't sign in admin" do
         click_button('Sign in')
 
-        expect(page).to have_content('invalid')
+        expect(page).to have_content('Invalid')
       end
 
     end

@@ -32,10 +32,6 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
         open_email(user.email)
         current_email.click_link('set new password')
 
-        fill_in('user_password', with: reset_password)
-        fill_in('user_password_confirmation', with: reset_password)
-        click_button('Update')
-
         expect(page).to have_content('expired')
       end
     end

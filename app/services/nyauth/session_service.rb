@@ -12,10 +12,10 @@ module Nyauth
       options.reverse_merge!(as: :user)
       klass = options[:as].to_s.classify.constantize
       @client = klass.authenticate(email, password)
-      errors.add(:client, 'invalid email or password') unless @client
+      errors.add(:base, :invalid_email_or_password) unless @client
       client
     rescue
-      errors.add(:client, 'invalid email or password')
+      errors.add(:base, :invalid_email_or_password)
     end
   end
 end
