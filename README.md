@@ -181,4 +181,11 @@ ja:
       reset_passwords:
         update:
           notice: 'パスワードを再設定しました'
+  activerecord:
+    errors:
+      messages:
+        key_expired: 'URLの有効期限が切れてしまいました'
+  errors:
+    messages:
+      invalid_email_or_password: 'ログイン情報に誤りがあります'
 ```

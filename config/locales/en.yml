@@ -24,3 +24,10 @@ en:
       reset_passwords:
         update:
           notice: 'updated password'
+  activerecord:
+    errors:
+      messages:
+        key_expired: 'This URL is expired'
+  errors:
+    messages:
+      invalid_email_or_password: 'Invalid email or password'

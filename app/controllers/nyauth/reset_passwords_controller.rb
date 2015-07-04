@@ -7,6 +7,9 @@ module Nyauth
     before_action :set_client
 
     def edit
+      unless @client.valid?(:edit_reset_password)
+        redirect_to new_session_path_for(client_name), alert: @client.errors[:reset_password_key].last
+      end
     end
 
     def update

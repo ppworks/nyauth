@@ -25,7 +25,7 @@ module Nyauth
 
     def check_confirmation_key
       if confirmation_key_expired_at.past?
-        errors.add(:confirmation_key, :expired)
+        errors.add(:confirmation_key, :key_expired)
       else
         self.confirmation_key = nil
       end

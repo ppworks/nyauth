@@ -3,7 +3,7 @@ module Nyauth
     extend ActiveSupport::Concern
 
     included do
-      before_validation :check_reset_password_key, on: :reset_password
+      before_validation :check_reset_password_key, on: %i(reset_password edit_reset_password)
       validates :password, presence: true,
                            length: { minimum: Nyauth.configuration.password_minium },
                            on: [:create, :update_password, :reset_password]
@@ -25,7 +25,7 @@ module Nyauth
 
     def check_reset_password_key
       if reset_password_key_expired_at.past?
-        errors.add(:reset_password_key, :expired)
+        errors.add(:reset_password_key, :key_expired)
       else
         self.reset_password_key = nil
       end
