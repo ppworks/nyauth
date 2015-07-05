@@ -1,4 +1,4 @@
-## master(not released)
+## v0.2.3
 
 * Tweak I18n files. #30, #37
 * Refactor. #36
