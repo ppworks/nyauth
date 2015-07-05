@@ -12,6 +12,12 @@ RSpec.shared_examples 'Nyauth::SessionConcern' do
             subject
           }.to change { controller.signed_in?(options) }.from(false).to(true)
         end
+        
+        it '#signed_in?(as: :admin) should not change result from false'do
+          expect {
+            subject
+          }.not_to change { controller.signed_in?(as: :admin) }.from(false)
+        end
 
         it '#current_authenticated should change from result nil to user 'do
           expect {

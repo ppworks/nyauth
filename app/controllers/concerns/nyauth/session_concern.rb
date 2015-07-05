@@ -20,7 +20,7 @@ module Nyauth
     # signed_in?(as: :user)
     def signed_in?(options = {})
       options.reverse_merge!(as: :user)
-      session[signed_in_session_key].present?
+      current_authenticated.present? && current_authenticated.class.name.demodulize.underscore == options[:as].to_s
     end
 
     # ex.)
