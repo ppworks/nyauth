@@ -2,6 +2,8 @@
 
 Simple & modualbe authentication gem
 
+[CHANGE LOG](https://github.com/ppworks/nyauth/blob/master/CHANGELOG.md)
+
 ### application_controller.rb
 
 ```ruby
@@ -94,7 +96,7 @@ new_reset_password_request GET    /reset_password_requests/new(.:format)        
                            PUT    /reset_passwords/:reset_password_key(.:format)      nyauth/reset_passwords#update
 ```
 
-```
+```ruby
 new_session_path_for(:user) # /session/new
 new_session_path_for(:admin) # /admin/session/new
 ```
@@ -127,7 +129,7 @@ export NYAUTH_ENCRYPTION_SECRET=`bundle exec rake secret`
 
 Or edit `config/initializers/nyauth.rb`
 
-```
+```ruby
 nyauth.configure do |config|
   config.encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET'] || ENV['SECRET_KEY_BASE']
   config.confirmation_expire_limit = 1.hour
@@ -154,7 +156,7 @@ end
 
 I18n
 
-```
+```yaml
 ja:
   flash:
     nyauth:
