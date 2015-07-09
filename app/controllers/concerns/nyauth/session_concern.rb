@@ -38,25 +38,16 @@ module Nyauth
       head :unauthorized unless signed_in?(options)
     end
 
-    def current_authenticated
-      return nil unless session_value = session[signed_in_session_key]
-      klass_name, client_id = Nyauth::Encryptor.decrypt(session_value).split(':')
-      klass_name.constantize.find(client_id)
+    def current_authenticated(options = {})
+      options.reverse_merge!(as: :user)
+      request.env['nyauth'].session.fetch(options[:as])
     end
 
     def store_signed_in_session(client)
-      session[signed_in_session_key] = signed_in_session_object(client)
+      request.env['nyauth'].session.store(client, client.class.name.demodulize.underscore)
     end
 
     private
-
-    def signed_in_session_key
-      "sign_in_session"
-    end
-
-    def signed_in_session_object(client)
-      Nyauth::Encryptor.encrypt("#{client.class.name}:#{client.id}")
-    end
 
     module ClassMethods
       def allow_everyone(options = {})

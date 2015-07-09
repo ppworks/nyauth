@@ -1,8 +1,9 @@
 module FeatureMacros
-  include Nyauth::SessionConcern
-
   def sign_in(client)
-    session_value = signed_in_session_object(client)
-    page.set_rack_session(signed_in_session_key => session_value)
+    serializer = Nyauth::SessionSerializer.new({})
+    as = client.class.name.demodulize.underscore
+    session_key = serializer.key_for(as)
+    session_value = serializer.serialize(client)
+    page.set_rack_session(session_key => session_value)
   end
 end

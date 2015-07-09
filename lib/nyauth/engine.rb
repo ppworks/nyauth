@@ -17,5 +17,9 @@ module Nyauth
       g.assets false
       g.helper false
     end
+
+    initializer 'nyauth.add_middleware' do |app|
+      app.middleware.use Nyauth::Middleware
+    end
   end
 end
