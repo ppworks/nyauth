@@ -2,6 +2,8 @@ module Nyauth
   class SessionsController < ApplicationController
     include Nyauth::ApplicationConcern
     include Nyauth::ClientConcern
+    include Nyauth::SessionConcern
+    before_action -> { require_authentication! as: client_name }
     allow_everyone only: [:new, :create]
     respond_to :html, :json
     before_action :set_session_service
@@ -16,7 +18,7 @@ module Nyauth
 
     def destroy
       sign_out
-      respond_with @session_service, location: Nyauth.configuration.redirect_path_after_sign_out.call(client_name) || new_session_path
+      respond_with @session_service, location: Nyauth.configuration.redirect_path_after_sign_out.call(client_name) || new_session_path_for(client_name)
     end
 
     private

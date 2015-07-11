@@ -35,7 +35,7 @@ module Nyauth
         path = @__candidates.grep(/\A#{client_name}_#{feature}_path\z/).first
       end
       return nil unless path
-      __send__(path, *args)
+      main_app.__send__(path, *args)
     end
 
     def root_path
