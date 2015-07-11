@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Nyauth::ApplicationConcern
   include Nyauth::SessionConcern
   self.responder = Nyauth::AppResponder
   # Prevent CSRF attacks by raising an exception.

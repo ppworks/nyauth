@@ -2,6 +2,9 @@ module Nyauth
   class PasswordsController < ApplicationController
     include Nyauth::ApplicationConcern
     include Nyauth::ClientConcern
+    include Nyauth::SessionConcern
+    before_action -> { require_authentication! as: client_name }
+
     respond_to :html, :json
     before_action :set_client
 
