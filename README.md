@@ -9,6 +9,8 @@ Simple & modualbe authentication gem
 ```ruby
 class ApplicationController < ActionController::Base
   include Nyauth::SessionConcern
+  include Nyauth::ClientConcern
+  before_action -> { require_authentication! as: client_name }
 end
 ```
 
