@@ -1,3 +1,4 @@
+require 'nyauth/middleware'
 require 'nyauth/engine'
 require 'nyauth/encryptor'
 require 'nyauth/configuration'

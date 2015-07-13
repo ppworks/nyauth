@@ -12,7 +12,7 @@ RSpec.shared_examples 'Nyauth::SessionConcern' do
             subject
           }.to change { controller.signed_in?(options) }.from(false).to(true)
         end
-        
+
         it '#signed_in?(as: :admin) should not change result from false'do
           expect {
             subject

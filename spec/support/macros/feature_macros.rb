@@ -2,7 +2,14 @@ module FeatureMacros
   include Nyauth::SessionConcern
 
   def sign_in(client)
-    session_value = signed_in_session_object(client)
-    page.set_rack_session(signed_in_session_key => session_value)
+    Nyauth::Nyan.on_test_request do |nyauth_nyan|
+      nyauth_nyan.session.store(client, client.class.name.demodulize.underscore)
+    end
+  end
+
+  def sign_out
+    Nyauth::Nyan.on_test_request do |nyauth_nyan|
+      nyauth_nyan.session.session.clear
+    end
   end
 end

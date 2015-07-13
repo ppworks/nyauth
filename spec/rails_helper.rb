@@ -4,7 +4,6 @@ require 'spec_helper'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/email/rspec'
-require 'rack_session_access/capybara'
 
 Rails.application.config do
   config.middleware.use RackSessionAccess::Middleware
