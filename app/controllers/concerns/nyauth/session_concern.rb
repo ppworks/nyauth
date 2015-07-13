@@ -20,7 +20,8 @@ module Nyauth
     # signed_in?(as: :user)
     def signed_in?(options = {})
       options.reverse_merge!(as: :user)
-      current_authenticated.present? && current_authenticated.class.name.demodulize.underscore == options[:as].to_s
+      current_authenticated(options).present? && \
+        current_authenticated(options).class.name.demodulize.underscore == options[:as].to_s
     end
 
     # ex.)
@@ -40,14 +41,18 @@ module Nyauth
 
     def current_authenticated(options = {})
       options.reverse_merge!(as: :user)
-      request.env['nyauth'].session.fetch(options[:as])
+      nyauth_nyan.session.fetch(options[:as])
     end
 
     def store_signed_in_session(client)
-      request.env['nyauth'].session.store(client, client.class.name.demodulize.underscore)
+      nyauth_nyan.session.store(client, client.class.name.demodulize.underscore)
     end
 
     private
+
+    def nyauth_nyan
+      request.env['nyauth']
+    end
 
     module ClassMethods
       def allow_everyone(options = {})

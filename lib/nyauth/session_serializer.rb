@@ -14,7 +14,7 @@ module Nyauth
 
     def deserialize(key)
       klass_name, client_id = Nyauth::Encryptor.decrypt(key).split(':')
-      klass_name.constantize.find(client_id)
+      klass_name.constantize.find_by(id: client_id)
     end
 
     def store(client, scope)

@@ -31,6 +31,10 @@ RSpec.describe 'Nyauth::Sessions' do
         visit root_path
         click_link('Sign out')
         expect(page).to have_content('sign out')
+
+        sign_out
+        visit root_path
+        expect(page).not_to have_content('sign out')
       end
     end
   end
@@ -65,6 +69,10 @@ RSpec.describe 'Nyauth::Sessions' do
         visit root_path
         click_link('Sign out')
         expect(page).to have_content('sign out')
+
+        sign_out
+        visit root_path
+        expect(page).not_to have_content('sign out')
       end
     end
   end

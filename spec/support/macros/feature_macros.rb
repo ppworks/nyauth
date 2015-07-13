@@ -1,9 +1,15 @@
 module FeatureMacros
+  include Nyauth::SessionConcern
+
   def sign_in(client)
-    serializer = Nyauth::SessionSerializer.new({})
-    as = client.class.name.demodulize.underscore
-    session_key = serializer.key_for(as)
-    session_value = serializer.serialize(client)
-    page.set_rack_session(session_key => session_value)
+    Nyauth::Nyan.on_test_request do |nyauth_nyan|
+      nyauth_nyan.session.store(client, client.class.name.demodulize.underscore)
+    end
+  end
+
+  def sign_out
+    Nyauth::Nyan.on_test_request do |nyauth_nyan|
+      nyauth_nyan.session.session.clear
+    end
   end
 end
