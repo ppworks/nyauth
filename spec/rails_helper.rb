@@ -4,6 +4,8 @@ require 'spec_helper'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/email/rspec'
+require 'nyauth/test/controller_macros'
+require 'nyauth/test/feature_macros'
 
 Rails.application.config do
   config.middleware.use RackSessionAccess::Middleware
@@ -20,8 +22,8 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.include FactoryGirl::Syntax::Methods
-  config.include ControllerMacros, type: :controller
-  config.include FeatureMacros, type: :feature
+  config.include Nyauth::Test::ControllerMacros, type: :controller
+  config.include Nyauth::Test::FeatureMacros, type: :feature
   config.include EmailSpec::Helpers, type: :mailer
   config.include EmailSpec::Matchers, type: :mailer
 
