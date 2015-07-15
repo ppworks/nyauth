@@ -193,3 +193,17 @@ ja:
     messages:
       invalid_email_or_password: 'ログイン情報に誤りがあります'
 ```
+
+## test
+
+spec/rails_helper.rb
+
+```ruby
+require 'nyauth/test/controller_macros'
+require 'nyauth/test/feature_macros'
+
+RSpec.configure do |config|
+  config.include Nyauth::Test::ControllerMacros, type: :controller
+  config.include Nyauth::Test::FeatureMacros, type: :feature
+end
+```
