@@ -1,3 +1,7 @@
+## v0.2.6
+
+* Add test helper #42
+
 ## v0.2.5
 
 * Fix bug. #41
