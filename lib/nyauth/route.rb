@@ -1,5 +1,10 @@
 module Nyauth
   module Route
+    def initialize(*args)
+      super(*args)
+      nyauth_concerns
+    end
+
     def nyauth_concerns
       concern :nyauth_registrable do
         resource :registration, only: %i(new create)
