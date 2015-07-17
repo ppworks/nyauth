@@ -3,6 +3,7 @@ module Nyauth
     include Nyauth::ApplicationConcern
     include Nyauth::ClientConcern
     allow_everyone
+    self.responder = Nyauth::AppResponder
     respond_to :html, :json
     before_action :set_client
 

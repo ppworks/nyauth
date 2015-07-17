@@ -5,6 +5,7 @@ module Nyauth
     include Nyauth::SessionConcern
     before_action -> { require_authentication! as: client_name }
 
+    self.responder = Nyauth::AppResponder
     respond_to :html, :json
     before_action :set_client
 
