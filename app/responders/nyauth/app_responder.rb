@@ -10,7 +10,7 @@ module Nyauth
       else
         if Rails.version >= "5"
           controller.default_render(options) do
-            fail ActionView::MissingTemplate.new([], "", [], true, [])
+            raise ActionView::MissingTemplate.new([], "", [], true, [])
           end
         else
           controller.default_render(options)
