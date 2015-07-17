@@ -1,3 +1,8 @@
+## v0.2.7
+
+* Support Rails 5.0.0.alpha #44
+* Use Nyauth::AppResponder in nyauth controller. #43
+
 ## v0.2.6
 
 * Add test helper #42
