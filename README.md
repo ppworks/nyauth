@@ -1,6 +1,6 @@
 # Nyauth
 
-Simple & modualbe authentication gem
+Simple & modulable authentication gem
 
 [CHANGE LOG](https://github.com/ppworks/nyauth/blob/master/CHANGELOG.md)
 
