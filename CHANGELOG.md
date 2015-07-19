@@ -1,3 +1,8 @@
+## v0.2.8
+
+* Description typo
+* Don't use alias_method_chain #46
+
 ## v0.2.7
 
 * Support Rails 5.0.0.alpha #44
