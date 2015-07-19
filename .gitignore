@@ -112,10 +112,7 @@ bower.json
 ## Rails engine
 spec/dummy/log
 spec/dummy/log
-spec/dummy/tmp/*
-!/spec/dummy/tmp/cache/
-/spec/dummy/tmp/cache/*
-!/spec/dummy/tmp/cache/.keep
+spec/dummy/tmp
 spec/dummy/db/*.sqlite3
 spec/dummy/public/system
 spec/dummy/coverage/
