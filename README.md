@@ -199,8 +199,7 @@ ja:
 spec/rails_helper.rb
 
 ```ruby
-require 'nyauth/test/controller_macros'
-require 'nyauth/test/feature_macros'
+require 'nyauth/test/macros'
 
 RSpec.configure do |config|
   config.include Nyauth::Test::ControllerMacros, type: :controller
