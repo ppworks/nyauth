@@ -4,8 +4,7 @@ require 'spec_helper'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/email/rspec'
-require 'nyauth/test/controller_macros'
-require 'nyauth/test/feature_macros'
+require 'nyauth/test/macros'
 
 Rails.application.config do
   config.middleware.use RackSessionAccess::Middleware
