@@ -206,3 +206,10 @@ RSpec.configure do |config|
   config.include Nyauth::Test::FeatureMacros, type: :feature
 end
 ```
+
+use macro
+
+```
+background { sign_in(user) }
+```
+
