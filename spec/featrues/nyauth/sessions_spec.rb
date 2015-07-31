@@ -19,7 +19,19 @@ RSpec.describe 'Nyauth::Sessions' do
 
         expect(page).to have_content('Invalid')
       end
+    end
 
+    feature 'sign in & redirect to page accessed before sign in' do
+      background { visit posts_path }
+
+      scenario 'sign in user' do
+        fill_in('session_service_email', with: user.email)
+        fill_in('session_service_password', with: user.password)
+        click_button('Sign in')
+
+        expect(page).to have_content('sign in success')
+        expect(current_path).to eq posts_path
+      end
     end
 
     feature 'sign out' do

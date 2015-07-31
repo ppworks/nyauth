@@ -14,7 +14,11 @@ module Nyauth
 
     def create
       sign_in(@session_service.client) if @session_service.save(as: client_name)
-      respond_with @session_service, location: Nyauth.configuration.redirect_path_after_sign_in.call(client_name) || main_app.root_path
+      redirect_path =  session.delete("#{client_name}_return_to")
+      respond_with @session_service,
+                   location: redirect_path || \
+                   Nyauth.configuration.redirect_path_after_sign_in.call(client_name) || \
+                   main_app.root_path
     end
 
     def destroy
