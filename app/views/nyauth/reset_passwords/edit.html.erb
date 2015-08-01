@@ -1,4 +1,4 @@
-<%= form_for @client, url: reset_password_path_for(client_name, params[:reset_password_key]) do |f| %>
+<%= form_for @client, url: reset_password_path_for(nyauth_client_name, params[:reset_password_key]) do |f| %>
   <%= f.object.errors.full_messages %>
   <%= f.password_field :password %>
   <%= f.password_field :password_confirmation %>

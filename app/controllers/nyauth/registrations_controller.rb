@@ -1,7 +1,6 @@
 module Nyauth
   class RegistrationsController < ApplicationController
-    include Nyauth::ApplicationConcern
-    include Nyauth::ClientConcern
+    include Nyauth::ControllerConcern
     allow_everyone
     self.responder = Nyauth::AppResponder
     respond_to :html, :json
@@ -12,17 +11,17 @@ module Nyauth
 
     def create
       sign_in(@client) if @client.save
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_registration.call(client_name) || main_app.root_path)
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_registration.call(nyauth_client_name) || main_app.root_path)
     end
 
     private
 
     def set_client
-      @client = client_class.new(client_params)
+      @client = nyauth_client_class.new(client_params)
     end
 
     def client_params
-      params.fetch(client_name, {})
+      params.fetch(nyauth_client_name, {})
             .permit(:email, :password, :password_confirmation)
     end
   end

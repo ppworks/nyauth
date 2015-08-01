@@ -8,8 +8,7 @@ Simple & modulable authentication gem
 
 ```ruby
 class ApplicationController < ActionController::Base
-  include Nyauth::SessionConcern
-  include Nyauth::ClientConcern
+  include Nyauth::ControllerConcern
   before_action -> { require_authentication! as: client_name }
 end
 ```
@@ -212,4 +211,3 @@ use macro
 ```
 background { sign_in(user) }
 ```
-

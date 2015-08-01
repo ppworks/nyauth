@@ -1,8 +1,4 @@
 class ApplicationController < ActionController::Base
-  include Nyauth::ApplicationConcern
-  include Nyauth::SessionConcern
-  self.responder = Nyauth::AppResponder
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include Nyauth::ControllerConcern
   protect_from_forgery with: :exception
 end

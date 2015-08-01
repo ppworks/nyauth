@@ -1,7 +1,6 @@
 module Nyauth
   class ResetPasswordRequestsController < ApplicationController
-    include Nyauth::ApplicationConcern
-    include Nyauth::ClientConcern
+    include Nyauth::ControllerConcern
     allow_everyone
     self.responder = Nyauth::AppResponder
     respond_to :html, :json
@@ -13,13 +12,13 @@ module Nyauth
 
     def create
       @client.request_reset_password
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_reset_password_request.call(client_name) || main_app.root_path)
+      respond_with(@client, location: Nyauth.configuration.redirect_path_after_reset_password_request.call(nyauth_client_name) || main_app.root_path)
     end
 
     private
 
     def set_client
-      @client = client_class.find_by!(email: params[client_name][:email])
+      @client = nyauth_client_class.find_by!(email: params[nyauth_client_name][:email])
     rescue ActiveRecord::RecordNotFound
       render :new
     end
