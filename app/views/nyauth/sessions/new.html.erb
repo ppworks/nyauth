@@ -1,4 +1,4 @@
-<%= form_for @session_service, url: session_path_for(client_name) do |f| %>
+<%= form_for @session_service, url: session_path_for(nyauth_client_name) do |f| %>
   <%= f.object.errors.full_messages.join ',' %>
   <%= f.email_field :email %>
   <%= f.password_field :password %>
