@@ -1,8 +1,6 @@
 module Nyauth
   class PasswordsController < ApplicationController
-    include Nyauth::ApplicationConcern
-    include Nyauth::ClientConcern
-    include Nyauth::SessionConcern
+    include Nyauth::ControllerConcern
     before_action -> { require_authentication! as: client_name }
 
     self.responder = Nyauth::AppResponder
