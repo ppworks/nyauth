@@ -1,3 +1,9 @@
+## v0.3.0
+
+* Refactor #54
+  * client_class & client_name is deprecated. Use nyauth_client_class & nyauth_client_name
+* Tweak redirect paeg after sign in #53
+
 ## v0.2.8
 
 * Description typo
