@@ -1,4 +1,4 @@
-<%= form_for nyauth_client_class.new, url: confirmation_requests_path_for(nyauth_client_name) do |f| %>
+<%= form_for @confirmation_request_service, url: confirmation_requests_path_for(nyauth_client_name) do |f| %>
   <%= f.email_field :email %>
   <%= f.submit 'request confirmation' %>
 <% end %>
