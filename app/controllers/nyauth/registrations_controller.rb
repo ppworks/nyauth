@@ -4,24 +4,24 @@ module Nyauth
     allow_everyone
     self.responder = Nyauth::AppResponder
     respond_to :html, :json
-    before_action :set_client
+    before_action :set_registration_service
 
     def new
     end
 
     def create
-      sign_in(@client) if @client.save
-      respond_with(@client, location: Nyauth.configuration.redirect_path_after_registration.call(nyauth_client_name) || main_app.root_path)
+      sign_in(@registration_service.client) if @registration_service.save(as: nyauth_client_name)
+      respond_with @registration_service, location: Nyauth.configuration.redirect_path_after_registration.call(nyauth_client_name) || main_app.root_path
     end
 
     private
 
-    def set_client
-      @client = nyauth_client_class.new(client_params)
+    def set_registration_service
+      @registration_service = Nyauth::RegistrationService.new(registration_params)
     end
 
-    def client_params
-      params.fetch(nyauth_client_name, {})
+    def registration_params
+      params.fetch(:registration_service, {})
             .permit(:email, :password, :password_confirmation)
     end
   end

@@ -7,9 +7,9 @@ RSpec.describe 'Nyauth::Registrations' do
     background { visit nyauth.new_registration_path }
 
     scenario 'create user' do
-      fill_in('user_email', with: user.email)
-      fill_in('user_password', with: user.password)
-      fill_in('user_password_confirmation', with: user.password)
+      fill_in('registration_service_email', with: user.email)
+      fill_in('registration_service_password', with: user.password)
+      fill_in('registration_service_password_confirmation', with: user.password)
       click_button('Sign up')
 
       expect(page).to have_content('registration success')
