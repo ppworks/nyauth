@@ -31,3 +31,4 @@ en:
   errors:
     messages:
       invalid_email_or_password: 'Invalid email or password'
+      invalid_email: 'Invalid email'

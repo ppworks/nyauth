@@ -1,5 +1,5 @@
 module Nyauth
-  class ConfirmationRequestService
+  class ResetPasswordRequestService
     include ActiveModel::Model
     attr_reader :email, :client
 
@@ -11,7 +11,7 @@ module Nyauth
       options.reverse_merge!(as: :user)
       klass = options[:as].to_s.classify.constantize
       @client = klass.find_by!(email: @email)
-      @client.request_confirmation
+      @client.request_reset_password
     rescue
       errors.add(:base, :invalid_email)
     end

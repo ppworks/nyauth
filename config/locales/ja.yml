@@ -31,3 +31,4 @@ ja:
   errors:
     messages:
       invalid_email_or_password: 'ログイン情報に誤りがあります'
+      invalid_email: 'メールアドレスに誤りがあります'
