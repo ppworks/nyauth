@@ -3,10 +3,10 @@ module Nyauth
     include ActiveModel::Model
     attr_reader :email, :password, :password_confirmation, :client
 
-    def initialize(registration_service_params = {})
-      @email = registration_service_params[:email]
-      @password = registration_service_params[:password]
-      @password_confirmation = registration_service_params[:password_confirmation]
+    def initialize(service_params = {})
+      @email = service_params[:email]
+      @password = service_params[:password]
+      @password_confirmation = service_params[:password_confirmation]
     end
 
     def save(options = {})

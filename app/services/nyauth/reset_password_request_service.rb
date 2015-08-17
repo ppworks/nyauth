@@ -3,8 +3,8 @@ module Nyauth
     include ActiveModel::Model
     attr_reader :email, :client
 
-    def initialize(reset_password_request_service_params = {})
-      @email = reset_password_request_service_params[:email]
+    def initialize(service_params = {})
+      @email = service_params[:email]
     end
 
     def save(options = {})
