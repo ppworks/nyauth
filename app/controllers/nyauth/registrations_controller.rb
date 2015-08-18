@@ -17,11 +17,11 @@ module Nyauth
     private
 
     def set_service
-      @service = Nyauth::RegistrationService.new(registration_params)
+      @service = Nyauth::Registration.new(registration_params)
     end
 
     def registration_params
-      params.fetch(:registration_service, {})
+      params.fetch(:registration, {})
             .permit(:email, :password, :password_confirmation)
     end
   end

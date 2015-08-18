@@ -1,5 +1,5 @@
 module Nyauth
-  class RegistrationService
+  class Registration
     include ActiveModel::Model
     attr_reader :email, :password, :password_confirmation, :client
 

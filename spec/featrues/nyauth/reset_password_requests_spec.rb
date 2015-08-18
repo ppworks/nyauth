@@ -10,7 +10,7 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
     end
 
     scenario 'request & set reset password' do
-      fill_in('reset_password_request_service_email', with: user.email)
+      fill_in('reset_password_request_email', with: user.email)
       click_button('reset password')
 
       open_email(user.email)
@@ -25,7 +25,7 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
     end
 
     scenario 'request expired' do
-      fill_in('reset_password_request_service_email', with: user.email)
+      fill_in('reset_password_request_email', with: user.email)
       click_button('reset password')
 
       Timecop.freeze(Time.current + 3.hours) do

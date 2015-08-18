@@ -7,8 +7,8 @@ RSpec.describe 'Nyauth::Sessions' do
       background { visit nyauth.new_session_path }
 
       scenario 'sign in user' do
-        fill_in('session_service_email', with: user.email)
-        fill_in('session_service_password', with: user.password)
+        fill_in('session_email', with: user.email)
+        fill_in('session_password', with: user.password)
         click_button('Sign in')
 
         expect(page).to have_content('sign in success')
@@ -25,8 +25,8 @@ RSpec.describe 'Nyauth::Sessions' do
       background { visit posts_path }
 
       scenario 'sign in user' do
-        fill_in('session_service_email', with: user.email)
-        fill_in('session_service_password', with: user.password)
+        fill_in('session_email', with: user.email)
+        fill_in('session_password', with: user.password)
         click_button('Sign in')
 
         expect(page).to have_content('sign in success')
@@ -57,8 +57,8 @@ RSpec.describe 'Nyauth::Sessions' do
       background { visit new_admin_session_path }
 
       scenario 'sign in admin' do
-        fill_in('session_service_email', with: admin.email)
-        fill_in('session_service_password', with: admin.password)
+        fill_in('session_email', with: admin.email)
+        fill_in('session_password', with: admin.password)
         click_button('Sign in')
 
         expect(page).to have_content('sign in success')

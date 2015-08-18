@@ -1,5 +1,5 @@
 module Nyauth
-  class SessionService
+  class Session
     include ActiveModel::Model
     attr_reader :email, :password, :client
 

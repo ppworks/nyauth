@@ -18,11 +18,11 @@ module Nyauth
     private
 
     def set_service
-      @service = Nyauth::ConfirmationRequestService.new(confirmation_request_params)
+      @service = Nyauth::ConfirmationRequest.new(confirmation_request_params)
     end
 
     def confirmation_request_params
-      params.fetch(:confirmation_request_service, {})
+      params.fetch(:confirmation_request, {})
             .permit(:email)
     end
 
