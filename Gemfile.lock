@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nyauth (0.3.0)
+    nyauth (0.4.0)
       rails (>= 4.2.0, < 6)
       responders (~> 2.0)
 
@@ -199,4 +199,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

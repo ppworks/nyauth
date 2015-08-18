@@ -1,3 +1,8 @@
+## v0.4.0
+
+* Refactor #55, #56, #57
+  * Change parameter name. Please re-create views. `rails g nyauth:views`
+
 ## v0.3.0
 
 * Refactor #54
