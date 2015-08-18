@@ -27,11 +27,11 @@ module Nyauth
     private
 
     def set_service
-      @service = Nyauth::SessionService.new(session_service_params)
+      @service = Nyauth::Session.new(session_service_params)
     end
 
     def session_service_params
-      params.fetch(:session_service, {})
+      params.fetch(:session, {})
             .permit(:email, :password)
     end
   end

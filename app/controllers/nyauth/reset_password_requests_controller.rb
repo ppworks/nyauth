@@ -18,11 +18,11 @@ module Nyauth
     private
 
     def set_service
-      @service = Nyauth::ResetPasswordRequestService.new(reset_password_request_params)
+      @service = Nyauth::ResetPasswordRequest.new(reset_password_request_params)
     end
 
     def reset_password_request_params
-      params.fetch(:reset_password_request_service, {})
+      params.fetch(:reset_password_request, {})
             .permit(:email)
     end
 
