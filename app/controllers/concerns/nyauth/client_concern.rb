@@ -4,8 +4,6 @@ module Nyauth
     included do |base|
       helper_method :nyauth_client_class
       helper_method :nyauth_client_name
-      helper_method :client_class # deprecated
-      helper_method :client_name # deprecated
     end
 
     def initialize
@@ -28,16 +26,6 @@ module Nyauth
 
     def nyauth_client_name
       nyauth_client_class.name.underscore.to_sym
-    end
-
-    def client_class
-      warn 'DEPRECATION WARNING: client_class is deprecated. Please use nyauth_client_class'
-      nyauth_client_class
-    end
-
-    def client_name
-      warn 'DEPRECATION WARNING: client_name is deprecated. Please use nyauth_client_name'
-      nyauth_client_name
     end
   end
 end
