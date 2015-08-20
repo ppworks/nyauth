@@ -13,7 +13,8 @@ module Nyauth
                   :reset_password_expire_limit,
                   :password_minium,
                   :password_digest_stretches,
-                  :encryption_secret
+                  :encryption_secret,
+                  :mail_delivery_method
 
 
     def initialize
@@ -30,6 +31,7 @@ module Nyauth
       @password_minium = 8
       @password_digest_stretches = 1000
       @encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET']
+      @mail_delivery_method = :deliver_now
       @redirect_path_block = Proc.new {}
     end
 
