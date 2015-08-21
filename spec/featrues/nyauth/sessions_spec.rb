@@ -22,7 +22,7 @@ RSpec.describe 'Nyauth::Sessions' do
     end
 
     feature 'sign in & redirect to page accessed before sign in' do
-      background { visit posts_path }
+      background { visit secret_page_path }
 
       scenario 'sign in user' do
         fill_in('session_email', with: user.email)
@@ -30,7 +30,8 @@ RSpec.describe 'Nyauth::Sessions' do
         click_button('Sign in')
 
         expect(page).to have_content('sign in success')
-        expect(current_path).to eq posts_path
+        expect(page).to have_content("It's a secret page!")
+        expect(current_path).to eq secret_page_path
       end
     end
 
