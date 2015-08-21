@@ -1,7 +1,18 @@
+<div class="nyauth-error-messages">
+  <%= @service.errors.full_messages.join(',') %>
+</div>
+
 <%= form_for @service, url: registration_path_for(nyauth_client_name) do |f| %>
-  <%= f.object.errors.full_messages.join ',' %>
-  <%= f.email_field :email %>
-  <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit 'Sign up' %>
+  <div>
+    <%= f.email_field :email, placeholder: 'email' %>
+  </div>
+  <div>
+    <%= f.password_field :password, placeholder: 'password' %>
+  </div>
+  <div>
+    <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
+  </div>
+  <div>
+    <%= f.submit 'Sign up' %>
+  </div>
 <% end %>
