@@ -1,4 +1,8 @@
+<div class="nyauth-error-messages">
+  <%= @service.errors.full_messages.join(',') %>
+</div>
+
 <%= form_for @service, url: confirmation_requests_path_for(nyauth_client_name) do |f| %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, placeholder: 'email' %>
   <%= f.submit 'request confirmation' %>
 <% end %>
