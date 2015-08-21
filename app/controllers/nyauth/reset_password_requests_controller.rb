@@ -27,7 +27,8 @@ module Nyauth
     end
 
     def send_mail
-      Nyauth::RequestMailer.request_reset_password(@service.client).deliver_now
+      Nyauth::RequestMailer.request_reset_password(@service.client)
+                           .__send__(Nyauth.configuration.mail_delivery_method)
     end
   end
 end
