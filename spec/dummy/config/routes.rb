@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   end
   mount Nyauth::Engine, at: '/', as: :nyauth
 
-  resources :posts, only: %i(index)
+  resource :secret_page, only: %i(show)
   root 'pages#index'
 end

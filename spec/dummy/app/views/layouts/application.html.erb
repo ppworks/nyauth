@@ -15,7 +15,7 @@
 <% if flash[:alert] %>
   <%= flash[:alert] %>
 <% end %>
-<%= link_to "URL helper on application", posts_path %>
+<%= link_to "URL helper on application", secret_page_path %>
 <% if signed_in?(as: :user) %>
   <%= link_to 'Sign out', session_path_for(:user), class: 'pure-menu-link', method: :delete %>
 <% end %>

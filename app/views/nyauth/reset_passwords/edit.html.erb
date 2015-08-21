@@ -1,6 +1,13 @@
+<div class="nyauth-error-messages">
+  <%= @client.errors.full_messages.join(',') %>
+</div>
+
 <%= form_for @client, url: reset_password_path_for(nyauth_client_name, params[:reset_password_key]) do |f| %>
-  <%= f.object.errors.full_messages %>
-  <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
+  <div>
+    <%= f.password_field :password, placeholder: 'password' %>
+  </div>
+  <div>
+    <%= f.password_field :password_confirmation, placeholder: 'password confirmation' %>
+  </div>
   <%= f.submit 'Update' %>
 <% end %>
