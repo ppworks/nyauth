@@ -158,39 +158,57 @@ end
 I18n
 
 ```yaml
-ja:
+en:
   flash:
     nyauth:
       passwords:
         update:
-          notice: 'パスワードを更新しました'
+          notice: 'updated password'
       registrations:
         create:
-          notice: '登録完了しました'
+          notice: 'registration success'
       sessions:
         create:
-          notice: 'ログインしました'
+          notice: 'sign in success'
         destroy:
-          notice: 'ログアウトしました'
+          notice: 'sign out success'
       confirmations:
         update:
-          notice: 'メールアドレスの確認をしました'
+          notice: 'confirmed'
       confirmation_requests:
         create:
-          notice: 'メールアドレスへ確認メールを送信しました'
+          notice: 'sent mail'
       reset_password_requests:
         create:
-          notice: 'メールアドレスへパスワードリセットの案内を送信しました'
+          notice: 'sent mail'
       reset_passwords:
         update:
-          notice: 'パスワードを再設定しました'
+          notice: 'updated password'
   activerecord:
     errors:
       messages:
-        key_expired: 'URLの有効期限が切れてしまいました'
+        key_expired: 'This URL is expired'
   errors:
     messages:
-      invalid_email_or_password: 'ログイン情報に誤りがあります'
+      invalid_email_or_password: 'Invalid email or password'
+      invalid_email: 'Invalid email'
+  nav:
+    nyauth:
+      common:
+        send: 'Send'
+        set: 'Set'
+        update: 'Update'
+      sessions:
+        new: 'Sign in'
+        destroy: 'Sign out'
+      registrations:
+        new: 'Sign up'
+      passwords:
+        edit: 'Change password'
+      reset_password_requests:
+        new: 'Reset password'
+      confirmation_requests:
+        new: 'Confirm E-mail address'
 ```
 
 ## test

@@ -10,6 +10,19 @@
     <%= f.password_field :password, placeholder: 'password' %>
   </div>
   <div>
-    <%= f.submit 'Sign in' %>
+    <%= f.submit t('nav.nyauth.sessions.new') %>
   </div>
 <% end %>
+
+<ul>
+  <li>
+    <%= link_to new_registration_path_for(nyauth_client_name) do %>
+      <%= t('nav.nyauth.registrations.new') %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to new_reset_password_request_path_for(nyauth_client_name) do %>
+      <%= t('nav.nyauth.reset_password_requests.new') %>
+    <% end %>
+  </li>
+</ul>

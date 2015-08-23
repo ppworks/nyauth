@@ -32,3 +32,20 @@ en:
     messages:
       invalid_email_or_password: 'Invalid email or password'
       invalid_email: 'Invalid email'
+  nav:
+    nyauth:
+      common:
+        send: 'Send'
+        set: 'Set'
+        update: 'Update'
+      sessions:
+        new: 'Sign in'
+        destroy: 'Sign out'
+      registrations:
+        new: 'Sign up'
+      passwords:
+        edit: 'Change password'
+      reset_password_requests:
+        new: 'Reset password'
+      confirmation_requests:
+        new: 'Confirm E-mail address'

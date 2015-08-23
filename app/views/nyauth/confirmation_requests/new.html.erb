@@ -4,5 +4,5 @@
 
 <%= form_for @service, url: confirmation_requests_path_for(nyauth_client_name) do |f| %>
   <%= f.email_field :email, placeholder: 'email' %>
-  <%= f.submit 'request confirmation' %>
+  <%= f.submit t('nav.nyauth.common.send') %>
 <% end %>
