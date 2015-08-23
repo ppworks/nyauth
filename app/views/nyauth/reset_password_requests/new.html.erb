@@ -4,5 +4,5 @@
 
 <%= form_for @service, url: reset_password_requests_path_for(nyauth_client_name) do |f| %>
   <%= f.text_field :email, placeholder: 'email' %>
-  <%= f.submit 'reset password' %>
+  <%= f.submit t('nav.nyauth.common.send') %>
 <% end %>

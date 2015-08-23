@@ -11,14 +11,14 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
 
     scenario 'request & set reset password' do
       fill_in('reset_password_request_email', with: user.email)
-      click_button('reset password')
+      click_button(I18n.t('nav.nyauth.common.send'))
 
       open_email(user.email)
       current_email.click_link('set new password')
 
       fill_in('user_password', with: reset_password)
       fill_in('user_password_confirmation', with: reset_password)
-      click_button('Update')
+      click_button(I18n.t('nav.nyauth.common.set'))
 
       expect(page).to have_content('updated')
       expect(current_path).to eq nyauth.new_session_path
@@ -26,7 +26,7 @@ RSpec.describe 'Nyauth::NewPasswordRequests' do
 
     scenario 'request expired' do
       fill_in('reset_password_request_email', with: user.email)
-      click_button('reset password')
+      click_button(I18n.t('nav.nyauth.common.send'))
 
       Timecop.freeze(Time.current + 3.hours) do
         open_email(user.email)

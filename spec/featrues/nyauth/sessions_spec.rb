@@ -9,13 +9,13 @@ RSpec.describe 'Nyauth::Sessions' do
       scenario 'sign in user' do
         fill_in('session_email', with: user.email)
         fill_in('session_password', with: user.password)
-        click_button('Sign in')
+        click_button(I18n.t('nav.nyauth.sessions.new'))
 
         expect(page).to have_content('sign in success')
       end
 
       scenario "can't sign in user" do
-        click_button('Sign in')
+        click_button(I18n.t('nav.nyauth.sessions.new'))
 
         expect(page).to have_content('Invalid')
       end
@@ -27,7 +27,7 @@ RSpec.describe 'Nyauth::Sessions' do
       scenario 'sign in user' do
         fill_in('session_email', with: user.email)
         fill_in('session_password', with: user.password)
-        click_button('Sign in')
+        click_button(I18n.t('nav.nyauth.sessions.new'))
 
         expect(page).to have_content('sign in success')
         expect(page).to have_content("It's a secret page!")
@@ -42,7 +42,7 @@ RSpec.describe 'Nyauth::Sessions' do
 
       scenario 'sign out user' do
         visit root_path
-        click_link('Sign out')
+        click_link(I18n.t('nav.nyauth.sessions.destroy'))
         expect(page).to have_content('sign out')
 
         sign_out
@@ -60,13 +60,13 @@ RSpec.describe 'Nyauth::Sessions' do
       scenario 'sign in admin' do
         fill_in('session_email', with: admin.email)
         fill_in('session_password', with: admin.password)
-        click_button('Sign in')
+        click_button(I18n.t('nav.nyauth.sessions.new'))
 
         expect(page).to have_content('sign in success')
       end
 
       scenario "can't sign in admin" do
-        click_button('Sign in')
+        click_button(I18n.t('nav.nyauth.sessions.new'))
 
         expect(page).to have_content('Invalid')
       end
@@ -80,7 +80,7 @@ RSpec.describe 'Nyauth::Sessions' do
 
       scenario 'sign out admin' do
         visit root_path
-        click_link('Sign out')
+        click_link(I18n.t('nav.nyauth.sessions.destroy'))
         expect(page).to have_content('sign out')
 
         sign_out

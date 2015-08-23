@@ -32,3 +32,20 @@ ja:
     messages:
       invalid_email_or_password: 'ログイン情報に誤りがあります'
       invalid_email: 'メールアドレスに誤りがあります'
+  nav:
+    nyauth:
+      common:
+        send: '送信する'
+        set: '設定する'
+        update: '更新する'
+      sessions:
+        new: 'ログイン'
+        destroy: 'ログアウト'
+      registrations:
+        new: '会員登録'
+      passwords:
+        edit: 'パスワード変更'
+      reset_password_requests:
+        new: 'パスワードリセット'
+      confirmation_requests:
+        new: 'メール認証'

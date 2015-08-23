@@ -10,7 +10,7 @@ RSpec.describe 'Nyauth::ConfirmationRequests' do
 
     scenario 'request & confirm' do
       fill_in('confirmation_request_email', with: user.email)
-      click_button('request confirmation')
+      click_button(I18n.t('nav.nyauth.common.send'))
 
       open_email(user.email)
       current_email.click_link('confirm')
@@ -22,7 +22,7 @@ RSpec.describe 'Nyauth::ConfirmationRequests' do
 
     scenario 'request expired' do
       fill_in('confirmation_request_email', with: user.email)
-      click_button('request confirmation')
+      click_button(I18n.t('nav.nyauth.common.send'))
 
       Timecop.freeze(Time.current + 3.hours) do
         open_email(user.email)
