@@ -17,5 +17,9 @@ FactoryGirl.define do
       reset_password_key 'key'
       reset_password_key_expired_at { Time.current + 1.hour }
     end
+
+    trait :confirmed do
+      confirmed_at { Time.current }
+    end
   end
 end
