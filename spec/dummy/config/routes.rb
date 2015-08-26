@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   mount Nyauth::Engine, at: '/', as: :nyauth
 
   resource :secret_page, only: %i(show)
+  resource :notification, only: %(edit)
   root 'pages#index'
 end

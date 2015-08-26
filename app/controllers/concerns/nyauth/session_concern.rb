@@ -51,6 +51,21 @@ module Nyauth
       nyauth_nyan.session.store(client, client.class.name.demodulize.underscore)
     end
 
+    # ex.)
+    # before_action -> { require_confirmation! as: :user }, only: :secret_action
+    def require_confirmation!(options = {})
+      options.reverse_merge!(as: :user)
+      redirect_to new_confirmation_request_path_for(options[:as]) unless confirmed?(options)
+    end
+
+    def confirmed?(options = {})
+      options.reverse_merge!(as: :user)
+      return false unless signed_in?(options)
+
+      current_authenticated(options).confirmed? && \
+        current_authenticated(options).class.name.demodulize.underscore == options[:as].to_s
+    end
+
     private
 
     def nyauth_nyan
