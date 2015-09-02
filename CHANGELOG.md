@@ -1,3 +1,12 @@
+## v0.5.0
+
+* Remove deprecated methods. #58
+* Mailer delivery method setting. #59
+  * `config.config.mail_delivery_method = :deliver_now`
+* Tweak views #61, #62
+* Fix bugs.
+  * Store return_to path when not signed in. #64
+
 ## v0.4.0
 
 * Refactor #55, #56, #57
@@ -6,13 +15,13 @@
 ## v0.3.0
 
 * Refactor #54
-  * client_class & client_name is deprecated. Use nyauth_client_class & nyauth_client_name
+  * client_class & client_name is deprecated. Use nyauth_client_class & nyauth_client_name.
 * Tweak redirect paeg after sign in #53
 
 ## v0.2.8
 
-* Description typo
-* Don't use alias_method_chain #46
+* Description typo.
+* Don't use alias_method_chain. #46
 
 ## v0.2.7
 
@@ -21,7 +30,7 @@
 
 ## v0.2.6
 
-* Add test helper #42
+* Add test helper. #42
 
 ## v0.2.5
 
