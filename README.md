@@ -9,7 +9,7 @@ Simple & modulable authentication gem
 ```ruby
 class ApplicationController < ActionController::Base
   include Nyauth::ControllerConcern
-  before_action -> { require_authentication! as: client_name }
+  before_action -> { require_authentication! as: nyauth_client_name }
 end
 ```
 
