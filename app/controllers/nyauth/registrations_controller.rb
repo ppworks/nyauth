@@ -1,9 +1,6 @@
 module Nyauth
-  class RegistrationsController < ApplicationController
-    include Nyauth::ControllerConcern
+  class RegistrationsController < Nyauth::BaseController
     allow_everyone
-    self.responder = Nyauth::AppResponder
-    respond_to :html, :json
     before_action :set_service
 
     def new

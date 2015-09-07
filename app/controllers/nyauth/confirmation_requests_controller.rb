@@ -1,9 +1,8 @@
 module Nyauth
-  class ConfirmationRequestsController < ApplicationController
-    include Nyauth::ControllerConcern
+  class ConfirmationRequestsController < Nyauth::BaseController
     allow_everyone
     self.responder = Nyauth::AppResponder
-    respond_to :html, :json
+
     before_action :set_service
     after_action :send_mail, only: [:create], if: -> { @service.errors.blank? }
 

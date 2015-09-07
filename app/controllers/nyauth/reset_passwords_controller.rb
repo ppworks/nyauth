@@ -1,9 +1,6 @@
 module Nyauth
-  class ResetPasswordsController < ApplicationController
-    include Nyauth::ControllerConcern
+  class ResetPasswordsController < Nyauth::BaseController
     allow_everyone
-    self.responder = Nyauth::AppResponder
-    respond_to :html, :json
     before_action :set_client
 
     def edit

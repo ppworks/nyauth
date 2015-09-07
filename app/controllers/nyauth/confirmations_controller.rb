@@ -1,9 +1,8 @@
 module Nyauth
-  class ConfirmationsController < ApplicationController
-    include Nyauth::ControllerConcern
+  class ConfirmationsController < Nyauth::BaseController
     allow_everyone
     self.responder = ConfirmationResponder
-    respond_to :html, :json
+
     before_action :set_client
 
     def update

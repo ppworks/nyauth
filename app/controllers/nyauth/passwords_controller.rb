@@ -1,10 +1,6 @@
 module Nyauth
-  class PasswordsController < ApplicationController
-    include Nyauth::ControllerConcern
+  class PasswordsController < Nyauth::BaseController
     before_action -> { require_authentication! as: nyauth_client_name }
-
-    self.responder = Nyauth::AppResponder
-    respond_to :html, :json
     before_action :set_client
 
     def edit
