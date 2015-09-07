@@ -36,6 +36,7 @@ module Nyauth
       options.reverse_merge!(as: :user)
       return if self.class.allow_actions == :all
       return if self.class.allow_actions.present? && request[:action].to_sym.in?(self.class.allow_actions)
+
       unless signed_in?(options)
         session["#{options[:as]}_return_to"] = request.url if request.get?
         redirect_to new_session_path_for(options[:as])
