@@ -1,10 +1,7 @@
 module Nyauth
-  class SessionsController < ApplicationController
-    include Nyauth::ControllerConcern
-    before_action -> { require_authentication! as: nyauth_client_name }
+  class SessionsController < Nyauth::BaseController
     allow_everyone only: [:new, :create]
-    self.responder = Nyauth::AppResponder
-    respond_to :html, :json
+    before_action -> { require_authentication! as: nyauth_client_name }
     before_action :set_service
 
     def new

@@ -8,6 +8,7 @@ module Nyauth
 
     def initialize
       @nyauth_client_classes = {}
+
       super
     end
 
