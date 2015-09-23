@@ -13,7 +13,7 @@ module Nyauth
     # sign_in(client)
     def sign_in(client)
       return unless client
-      store_signed_in_session(client)
+      store_signed_in_status(client)
     end
 
     # ex.)
@@ -48,7 +48,7 @@ module Nyauth
       nyauth_nyan.session.fetch(options[:as])
     end
 
-    def store_signed_in_session(client)
+    def store_signed_in_status(client)
       nyauth_nyan.session.store(client, client.class.name.demodulize.underscore)
     end
 
