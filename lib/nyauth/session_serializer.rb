@@ -36,7 +36,7 @@ module Nyauth
       !!session[key_for(scope)]
     end
 
-    def delete(scope, client=nil)
+    def delete(scope)
       session.delete(key_for(scope))
     end
 
