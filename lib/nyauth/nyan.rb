@@ -16,6 +16,7 @@ module Nyauth
           callback.call(nyan, *options)
         end
       end
+
       @@_on_test_request = []
       yield
     end

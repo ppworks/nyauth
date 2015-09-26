@@ -19,6 +19,7 @@ module Nyauth
 
     def store(client, scope)
       return unless client
+
       session[key_for(scope)] = serialize(client)
     end
 
