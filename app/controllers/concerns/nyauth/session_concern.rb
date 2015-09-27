@@ -28,6 +28,11 @@ module Nyauth
     # sign_out
     def sign_out
       reset_session
+
+      if Nyauth.configuration.use_cookie_auth
+        # ex.) cookies.signed[:user_id]
+        cookies.delete :nyauth_cookie_auth
+      end
     end
 
     # ex.)
@@ -50,6 +55,11 @@ module Nyauth
 
     def store_signed_in_status(client)
       nyauth_nyan.session.store(client, client.class.name.demodulize.underscore)
+
+      if Nyauth.configuration.use_cookie_auth
+        # ex.) cookies.signed[:user_id]
+        cookies.signed[:nyauth_cookie_auth] = "#{client.class.name.demodulize.underscore}:#{client.id}"
+      end
     end
 
     private

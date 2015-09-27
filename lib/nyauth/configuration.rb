@@ -14,7 +14,8 @@ module Nyauth
                   :password_minium,
                   :password_digest_stretches,
                   :encryption_secret,
-                  :mail_delivery_method
+                  :mail_delivery_method,
+                  :use_cookie_auth
 
 
     def initialize
@@ -32,6 +33,7 @@ module Nyauth
       @password_digest_stretches = 1000
       @encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET']
       @mail_delivery_method = :deliver_now
+      @use_cookie_auth = false
       @redirect_path_block = Proc.new {}
     end
 
