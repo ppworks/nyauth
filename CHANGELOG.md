@@ -1,3 +1,7 @@
+## v0.6.0
+
+* Support cookie auth. #69
+
 ## v0.5.0
 
 * Remove deprecated methods. #58

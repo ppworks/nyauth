@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nyauth (0.5.0)
+    nyauth (0.6.0)
       rails (>= 4.2.0, < 6)
       responders (~> 2.0)
 
