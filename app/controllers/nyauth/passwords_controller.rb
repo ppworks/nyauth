@@ -15,7 +15,7 @@ module Nyauth
     private
 
     def set_client
-      @client = nyauth_client_class.find(current_authenticated.id)
+      @client = nyauth_client_class.find(current_authenticated(as: nyauth_client_name).id)
     end
 
     def client_params
