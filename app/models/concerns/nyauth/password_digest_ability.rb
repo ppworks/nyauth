@@ -25,7 +25,7 @@ module Nyauth
     end
 
     def generate_password_salt
-      "#{id}#{SecureRandom.hex(128)}"
+      SecureRandom.hex(64)
     end
 
     def set_password_salt
