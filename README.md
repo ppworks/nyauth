@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    current_authenticated(as: nyauth_client_name)
+    current_authenticated(as: :user)
   end
 end
 ```
