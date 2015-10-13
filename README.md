@@ -10,7 +10,20 @@ Simple & modulable authentication gem
 class ApplicationController < ActionController::Base
   include Nyauth::ControllerConcern
   before_action -> { require_authentication! as: nyauth_client_name }
+  helper_method :current_user
+
+  private
+
+  def current_user
+    current_authenticated(as: nyauth_client_name)
+  end
 end
+```
+
+For the current signed-in user, this helper is available:
+
+```ruby
+current_user
 ```
 
 ### migration
