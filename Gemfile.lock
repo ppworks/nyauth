@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nyauth (0.6.0)
+    nyauth (0.6.1)
       rails (>= 4.2.0, < 6)
       responders (~> 2.0)
 
@@ -157,9 +157,9 @@ GEM
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
     slop (3.6.0)
-    sprockets (3.3.3)
-      rack (~> 1.0)
-    sprockets-rails (2.3.2)
+    sprockets (3.4.0)
+      rack (> 1, < 3)
+    sprockets-rails (2.3.3)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)

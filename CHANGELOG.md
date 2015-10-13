@@ -1,3 +1,7 @@
+## v0.6.1
+
+* Fix bug. #71
+
 ## v0.6.0
 
 * Support cookie auth. #69
