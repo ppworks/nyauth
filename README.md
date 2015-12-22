@@ -1,5 +1,7 @@
 # Nyauth
 
+[![Code Climate](https://codeclimate.com/github/ppworks/nyauth/badges/gpa.svg)](https://codeclimate.com/github/ppworks/nyauth)
+
 Simple & modulable authentication gem
 
 [CHANGE LOG](https://github.com/ppworks/nyauth/blob/master/CHANGELOG.md)
