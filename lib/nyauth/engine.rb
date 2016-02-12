@@ -10,7 +10,6 @@ module Nyauth
   class Engine < ::Rails::Engine
     isolate_namespace Nyauth
 
-    config.i18n.load_path += Dir[Engine.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.generators do |g|
       g.test_framework      :rspec,        fixture: false
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
