@@ -3,10 +3,9 @@ module Nyauth
     extend ActiveSupport::Concern
 
     included do |base|
-      if base.ancestors.include?(ActionController::Base)
-        helper_method :signed_in?, :current_authenticated
-        class_attribute :allow_actions
-      end
+      next unless base.ancestors.include?(ActionController::Base)
+      helper_method :signed_in?, :current_authenticated
+      class_attribute :allow_actions
     end
 
     private
