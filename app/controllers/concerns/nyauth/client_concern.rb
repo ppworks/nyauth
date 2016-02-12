@@ -2,6 +2,7 @@ module Nyauth
   module ClientConcern
     extend ActiveSupport::Concern
     included do |base|
+      next unless base.ancestors.include?(ActionController::Base)
       helper_method :nyauth_client_class
       helper_method :nyauth_client_name
     end

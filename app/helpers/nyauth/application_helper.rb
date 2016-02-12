@@ -1,6 +1,6 @@
 module Nyauth
   module ApplicationHelper
-    def method_missing method, *args, &block
+    def method_missing(method, *args, &block)
       if method =~ /(.+)_path_for\z/
         detect_url_helper($1, *args)
       elsif method =~ /(_url|_path)\z/
