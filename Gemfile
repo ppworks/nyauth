@@ -5,7 +5,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'faker'
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-rails'

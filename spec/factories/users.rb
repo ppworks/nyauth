@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :user, class: 'User' do
     sequence(:email) { |n| "user#{n}@example.com" }
     password { 'password' }
-    nickname { Faker::Name.name }
+    sequence(:nickname) { |n| "Nick Name#{n}" }
 
     trait :without_nickname do
       nickname nil

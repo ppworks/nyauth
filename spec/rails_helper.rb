@@ -39,6 +39,4 @@ RSpec.configure do |config|
     DatabaseRewinder.clean
     Rails.cache.clear
   end
-
-  Faker::Config.locale = :en
 end
