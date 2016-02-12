@@ -9,6 +9,8 @@ module Nyauth
       end
     end
 
+    private
+
     # ex.)
     # sign_in(client)
     def sign_in(client)
@@ -61,8 +63,6 @@ module Nyauth
         cookies.signed[:nyauth_cookie_auth] = "#{client.class.name.demodulize.underscore}:#{client.id}"
       end
     end
-
-    private
 
     def nyauth_nyan
       request.env['nyauth']
