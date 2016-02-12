@@ -41,7 +41,7 @@ module Nyauth
     def require_authentication!(options = {})
       options.reverse_merge!(as: :user)
       return if self.class.allow_actions == :all
-      return if self.class.allow_actions.present? && request[:action].to_sym.in?(self.class.allow_actions)
+      return if self.class.allow_actions.present? && params[:action].to_sym.in?(self.class.allow_actions)
 
       unless signed_in?(options)
         session["#{options[:as]}_return_to"] = request.url if request.get?
