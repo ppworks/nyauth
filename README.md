@@ -1,6 +1,7 @@
 # Nyauth
 
 [![Code Climate](https://codeclimate.com/github/ppworks/nyauth/badges/gpa.svg)](https://codeclimate.com/github/ppworks/nyauth)
+[![Build Status](https://travis-ci.org/ppworks/nyauth.svg?branch=master)](https://travis-ci.org/ppworks/nyauth)
 
 Simple & modulable authentication gem
 
