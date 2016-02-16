@@ -25,7 +25,7 @@ module Nyauth
 
     def detect_url_helper_for_nyauth(feature, *args)
       path = @__candidates.grep(/\A#{feature}_path\z/).first
-      return nil unless path
+      return '' unless path
 
       nyauth.__send__(path, *args)
     end
@@ -37,7 +37,7 @@ module Nyauth
         path = @__candidates.grep(/\A#{nyauth_client_name}_#{feature}_path\z/).first
       end
 
-      return nil unless path
+      return '' unless path
 
       main_app.__send__(path, *args)
     end

@@ -118,3 +118,6 @@ spec/dummy/public/system
 spec/dummy/coverage/
 spec/dummy/spec/tmp
 spec/lib/generators/nyauth/tmp
+
+gemfiles/*.lock
+gemfiles/vendor

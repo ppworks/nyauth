@@ -34,7 +34,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when nyauth_client_name is admin' do
       let(:nyauth_client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to be_blank }
     end
 
     context 'when nyauth_client_name is user' do
@@ -48,7 +48,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when nyauth_client_name is admin' do
       let(:nyauth_client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to be_blank }
     end
 
     context 'when nyauth_client_name is user' do
@@ -76,7 +76,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when nyauth_client_name is admin' do
       let(:nyauth_client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to be_blank }
     end
 
     context 'when nyauth_client_name is user' do
@@ -91,7 +91,7 @@ RSpec.describe Nyauth::ApplicationHelper do
 
     context 'when nyauth_client_name is admin' do
       let(:nyauth_client_name) { :admin }
-      it { is_expected.to eq nil }
+      it { is_expected.to be_blank }
     end
 
     context 'when nyauth_client_name is user' do

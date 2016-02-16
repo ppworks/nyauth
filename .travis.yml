@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.2.3
+before_install: gem install bundler -v 1.11.2
+gemfile:
+  - gemfiles/Gemfile-rails.4.2.x
+  - gemfiles/Gemfile-rails.edge
+cache: bundler
