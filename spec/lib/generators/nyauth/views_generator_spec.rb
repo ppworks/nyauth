@@ -22,6 +22,9 @@ describe Nyauth::ViewsGenerator, type: :generator do
       assert_file 'app/views/nyauth/reset_password_requests/new.html.erb'
       assert_file 'app/views/nyauth/reset_passwords/edit.html.erb'
       assert_file 'app/views/nyauth/sessions/new.html.erb'
+      assert_file 'app/views/layouts/nyauth/base.html.erb'
+      assert_file 'app/views/layouts/nyauth/mailer.html.erb'
+      assert_file 'app/views/layouts/nyauth/mailer.text.erb'
     end
   end
 end

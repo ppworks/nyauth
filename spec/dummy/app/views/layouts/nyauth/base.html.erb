@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dummy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+<%= link_to "Secret page(URL helper on application)", secret_page_path %>
+<% if signed_in?(as: :user) %>
+  <%= link_to t('nav.nyauth.sessions.destroy'), session_path_for(:user), class: 'pure-menu-link', method: :delete %>
+<% end %>
+<% if signed_in?(as: :admin) %>
+  <%= link_to t('nav.nyauth.sessions.destroy'), session_path_for(:admin), class: 'pure-menu-link', method: :delete %>
+<% end %>
+
+<%= yield %>
+</body>
+</html>

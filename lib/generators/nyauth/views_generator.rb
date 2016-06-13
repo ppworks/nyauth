@@ -6,6 +6,7 @@ module Nyauth
 
     def copy_views
       directory "nyauth", "app/views/nyauth"
+      directory "layouts/nyauth", "app/views/layouts/nyauth"
       puts "copy views complete"
     end
   end
