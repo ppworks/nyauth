@@ -1,3 +1,7 @@
+## v0.7.0
+
+* Nyauth::BaseController extends ActionController::Base
+
 ## v0.6.2
 
 * Fix bug. #73
