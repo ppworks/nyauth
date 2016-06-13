@@ -4,6 +4,7 @@ Nyauth.configure do |config|
   config.reset_password_expire_limit = 1.hour
   config.mail_delivery_method = :deliver_now
   config.use_cookie_auth = false
+  config.parent_controller = "ApplicationController"
   config.redirect_path do |urls|
     # config.redirect_path_after_sign_in = -> (client_name) {
     #  if client_name == :admin

@@ -15,8 +15,8 @@ module Nyauth
                   :password_digest_stretches,
                   :encryption_secret,
                   :mail_delivery_method,
-                  :use_cookie_auth
-
+                  :use_cookie_auth,
+                  :parent_controller
 
     def initialize
       @redirect_path_after_sign_in = Proc.new {}
@@ -35,6 +35,7 @@ module Nyauth
       @mail_delivery_method = :deliver_now
       @use_cookie_auth = false
       @redirect_path_block = Proc.new {}
+      @parent_controller = "ApplicationController"
     end
 
     def redirect_path(&block)
