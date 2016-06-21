@@ -10,7 +10,7 @@ module Nyauth
     def save(options = {})
       options.reverse_merge!(as: :user)
       klass = options[:as].to_s.classify.constantize
-      @client = klass.find_by!(email: @email)
+      @client = klass.with_given_email(@email).last!
       @client.request_confirmation
     rescue
       errors.add(:base, :invalid_email)

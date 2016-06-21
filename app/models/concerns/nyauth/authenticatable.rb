@@ -6,11 +6,14 @@ module Nyauth
 
     included do
       validates :email, presence: true
+      scope :with_given_email, -> (given_email) {
+        where(email: given_email)
+      }
     end
 
     module ClassMethods
       def authenticate(given_email, given_password)
-        record = where(email: given_email).last
+        record = with_given_email(given_email).last
         return nil unless record
 
         record.verify_password?(given_password) ? record : nil
