@@ -8,7 +8,6 @@ module Nyauth
 
     def update
       @client.attributes = client_params
-      @client.password_digest_will_change! # HACK for Rails5beta2 https://github.com/rails/rails/issues/23645
       @client.save(context: :update_password)
       respond_with(@client, location: Nyauth.configuration.redirect_path_after_update_password.call(nyauth_client_name) || main_app.root_path)
     end
