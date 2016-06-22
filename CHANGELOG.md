@@ -1,3 +1,7 @@
+## v0.7.1
+
+* Refactor #81, #82
+
 ## v0.7.0
 
 * Nyauth::BaseController extends ActionController::Base
