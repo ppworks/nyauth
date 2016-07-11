@@ -147,7 +147,7 @@ export NYAUTH_ENCRYPTION_SECRET=`bundle exec rake secret`
 Or edit `config/initializers/nyauth.rb`
 
 ```ruby
-nyauth.configure do |config|
+Nyauth.configure do |config|
   config.encryption_secret = ENV['NYAUTH_ENCRYPTION_SECRET'] || ENV['SECRET_KEY_BASE']
   config.confirmation_expire_limit = 1.hour
   config.reset_password_expire_limit = 1.hour
