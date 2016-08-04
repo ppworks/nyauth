@@ -1,6 +1,6 @@
 module Nyauth
   class RequestMailer < ActionMailer::Base
-    default from: "from@example.com"
+    default from: Nyauth.configuration.mailer_sender
     layout 'nyauth/mailer'
     def request_confirmation(client)
       @client = client
