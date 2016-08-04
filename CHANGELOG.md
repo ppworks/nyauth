@@ -1,3 +1,7 @@
+## v0.7.2
+
+* Mailer sender setting. #84
+
 ## v0.7.1
 
 * Refactor #81, #82
